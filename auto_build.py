@@ -10,6 +10,7 @@ if not os.path.exists('links.json'):
 with open('links.json', 'r') as f:
     links = json.load(f)
 
+# Initialize GenAI Client using GEMINI_API_KEY environment variable
 client = genai.Client()
 
 os.makedirs('pages', exist_ok=True)
@@ -30,6 +31,7 @@ for key, link in links.items():
     Return ONLY valid, complete HTML code including <!DOCTYPE html>, <html>, <head> with clean CSS styles, and <body>. Do not wrap in markdown ```html block.
     """
 
+    # Call Gemini API with updated model syntax
     response = client.models.generate_content(
         model='gemini-2.5-flash',
         contents=prompt
@@ -109,5 +111,7 @@ index_html = f"""<!DOCTYPE html>
 
 with open('index.html', 'w', encoding='utf-8') as f:
     f.write(index_html)
+
+print("Build completed successfully!")
 
 print("Build completed successfully!")
