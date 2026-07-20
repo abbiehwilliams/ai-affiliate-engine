@@ -28,6 +28,7 @@ jobs:
       - name: Run AI Generator Script
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GOOGLE_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python auto_build.py
 
       - name: Commit and Push Changes
