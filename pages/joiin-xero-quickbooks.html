@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Combine Xero and QuickBooks Data into One Report | Stack Manuals</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+      color: #222;
+      line-height: 1.6;
+    }
+    a { color: #0070f3; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .btn {
+      display: inline-block;
+      background-color: #0070f3;
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+    .btn:hover { background-color: #0051a2; text-decoration: none; }
+    .box {
+      background-color: #f7f9fa;
+      border-left: 4px solid #0070f3;
+      padding: 15px 20px;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <p><a href="/">← Back to Stack Manuals</a></p>
+
+  <h1>How to Combine Xero and QuickBooks Data into One Consolidated Report</h1>
+  <p>Are you running multiple business entities where some use Xero and others use QuickBooks Online? Manually exporting CSVs into Excel every month-end leads to reporting errors, broken formulas, and hours of wasted time.</p>
+  <p>This guide demonstrates how to automatically consolidate financial statements across Xero and QuickBooks using Joiin.</p>
+
+  <hr>
+
+  <h2>The Problem</h2>
+  <ul>
+    <li>Account names and Chart of Accounts structures do not match.</li>
+    <li>Data must be manually refreshed at every month-end close.</li>
+    <li>Multi-currency exchange rates require manual adjustment.</li>
+  </ul>
+
+  <hr>
+
+  <h2>The Solution: Automated Consolidation with Joiin</h2>
+  <p>Joiin acts as a unified reporting layer sitting on top of both Xero and QuickBooks Online.</p>
+
+  <h3>Step 1: Connect Both Platforms</h3>
+  <ol>
+    <li>Log into your Joiin Dashboard.</li>
+    <li>Go to <strong>Companies</strong> → <strong>Add Company</strong>.</li>
+    <li>Select <strong>Xero</strong> and authorize your Xero entities.</li>
+    <li>Click <strong>Add Company</strong> again, select <strong>QuickBooks Online</strong>, and authorize your QuickBooks entities.</li>
+  </ol>
+
+  <h3>Step 2: Map Your Chart of Accounts</h3>
+  <ol>
+    <li>Navigate to <strong>Chart of Accounts</strong>.</li>
+    <li>Group mismatched account codes (e.g., map Xero <code>400 - Sales</code> and QuickBooks <code>4010 - Revenue</code> under a single group heading: <code>Group Revenue</code>).</li>
+  </ol>
+
+  <h3>Step 3: Run Consolidated Statements</h3>
+  <ol>
+    <li>Select <strong>Reports</strong> → <strong>Profit & Loss</strong> or <strong>Balance Sheet</strong>.</li>
+    <li>Choose your base reporting currency. Joiin automatically pulls live trial balance data from both Xero and QuickBooks and combines them into one presentation-ready report.</li>
+  </ol>
+
+  <div class="box">
+    <h3>Ready to automate your multi-entity reporting?</h3>
+    <a href="https://joiin.co/?red=stackm&utm_source=stackm&utm_medium=revshare&utm_affiliate_network=reditus" class="btn" target="_blank">Try Joiin Free for 14 Days</a>
+  </div>
+
+</body>
+</html>
