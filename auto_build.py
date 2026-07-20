@@ -2,7 +2,14 @@ import json
 import os
 from google import genai
 
-# Load links
+# Read API Key explicitly
+api_key = os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY")
+if not api_key:
+    print("Error: GEMINI_API_KEY environment variable is missing.")
+    exit(1)
+
+client = genai.Client(api_key=api_key)
+
 if not os.path.exists('links.json'):
     print("No links.json found.")
     exit(0)
@@ -10,11 +17,7 @@ if not os.path.exists('links.json'):
 with open('links.json', 'r') as f:
     links = json.load(f)
 
-# Initialize GenAI Client using GEMINI_API_KEY environment variable
-client = genai.Client()
-
 os.makedirs('pages', exist_ok=True)
-
 generated_guides = []
 
 for key, link in links.items():
@@ -22,18 +25,11 @@ for key, link in links.items():
     filepath = os.path.join('pages', filename)
     title = key.replace('-', ' ').title()
     
-    prompt = f"""
-    Create a clean, full-featured HTML webpage for a guide on '{title}'.
-    Target audience: CFOs, accountants, and finance managers.
-    Include step-by-step instructions and how this tool fixes multi-entity reporting / software integration issues.
-    The primary affiliate link for {title} is: {link}
-    Add a prominent call to action button linking to {link}.
-    Return ONLY valid, complete HTML code including <!DOCTYPE html>, <html>, <head> with clean CSS styles, and <body>. Do not wrap in markdown ```html block.
-    """
+    prompt = f"Create a clean, complete HTML webpage for {title}. Target audience: CFOs and accountants. Affiliate link: {link}. Include inline CSS styles. Return ONLY valid HTML code without markdown code blocks."
 
-    # Call Gemini API with updated model syntax
+    # Updated to gemini-3.5-flash
     response = client.models.generate_content(
-        model='gemini-2.5-flash',
+        model='gemini-3.5-flash',
         contents=prompt
     )
 
@@ -50,68 +46,30 @@ for key, link in links.items():
 
     generated_guides.append({'slug': filename, 'title': title})
 
-# Build index.html
 cards_html = ""
 for item in generated_guides:
-    cards_html += f"""
-    <li class="card">
-      📌 <a href="/pages/{item['slug']}">{item['title']} Setup & Integration Guide</a>
-    </li>
-    """
+    cards_html += f'<li class="card">📌 <a href="/pages/{item["slug"]}">{item["title"]} Setup Guide</a></li>\n'
 
 index_html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Stack Manuals - B2B SaaS Setup Guides</title>
+  <title>Stack Manuals</title>
   <style>
-    body {{
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
-      color: #333;
-    }}
-    h1 {{ font-size: 2.2rem; }}
-    p.subtitle {{ color: #666; font-size: 1.1rem; margin-bottom: 30px; }}
+    body {{ font-family: sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; }}
     ul {{ list-style: none; padding: 0; }}
-    .card {{
-      border: 1px solid #e2e8f0;
-      border-radius: 8px;
-      padding: 16px 20px;
-      margin-bottom: 12px;
-      transition: all 0.2s ease;
-    }}
-    .card:hover {{
-      border-color: #0070f3;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }}
-    .card a {{
-      text-decoration: none;
-      color: #0070f3;
-      font-weight: 600;
-      font-size: 1.1rem;
-    }}
+    .card {{ border: 1px solid #ddd; padding: 15px; margin-bottom: 10px; border-radius: 6px; }}
+    .card a {{ text-decoration: none; color: #0070f3; font-weight: bold; }}
   </style>
 </head>
 <body>
-
   <h1>🛠️ Stack Manuals</h1>
-  <p class="subtitle">Step-by-step technical guides and workflow integration manuals for modern SaaS tools.</p>
-
-  <h2>Available Documentation Guides</h2>
-  <ul>
-    {cards_html}
-  </ul>
-
+  <ul>{cards_html}</ul>
 </body>
-</html>
-"""
+</html>"""
 
 with open('index.html', 'w', encoding='utf-8') as f:
     f.write(index_html)
-
-print("Build completed successfully!")
 
 print("Build completed successfully!")
