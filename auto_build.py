@@ -35,7 +35,7 @@ for key, link in links.items():
     response = None
     for model_name in ['gemini-2.5-flash', 'gemini-1.5-flash']:
         try:
-            print(f"Generating page for {title} using {model_name}...")
+            print(f"Generating guide for {title} using {model_name}...")
             response = client.models.generate_content(
                 model=model_name,
                 contents=prompt
@@ -45,7 +45,6 @@ for key, link in links.items():
                 break
         except Exception as err:
             print(f"Model {model_name} failed: {err}")
-            time.sleep(10)  # Wait if rate limited
 
     if not response or not response.text:
         print(f"ERROR: Could not generate content for {title}.")
@@ -63,7 +62,7 @@ for key, link in links.items():
         f.write(html_content.strip())
 
     generated_guides.append({'slug': filename, 'title': title})
-    time.sleep(5)  # 5-second pause to prevent 429 rate limit errors
+    time.sleep(3)
 
 cards_html = ""
 for item in generated_guides:
