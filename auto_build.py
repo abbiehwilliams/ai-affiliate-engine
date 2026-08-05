@@ -18,25 +18,25 @@ TOPIC_CONFIGS = {
         "title": "How to Consolidate Multiple Xero & QuickBooks Accounts",
         "tool": "Joiin",
         "headline": "Combining Multi-Company Accounts into One Financial Report",
-        "intro": "Trying to combine multiple Xero or QuickBooks company accounts in Excel every month leads to formula errors and broken links. This technical guide shows you how to automate group financial reporting in under 10 minutes.",
+        "intro": "Trying to combine multiple Xero or QuickBooks company accounts in Excel leads to formula errors and broken links. This guide shows you how to automate group financial reporting in under 10 minutes.",
         "time": "10 Mins",
         "prereqs": ["Admin access to Xero, QuickBooks Online, or Sage", "Active Joiin account or trial subscription"],
         "steps": [
-            {"title": "Connect Your Accounting Platforms", "desc": "Sign in to Joiin, navigate to <strong>Companies &rarr; Add Company</strong>, and select Xero, QuickBooks Online, or Sage. Complete the single-sign-on workflow to authorize read access for each entity."},
-            {"title": "Configure Group Business Entities", "desc": "Access the <strong>Companies</strong> dashboard tab and select the checkbox next to each subsidiary or franchise entity you want to include in your combined financial statement calculations."},
-            {"title": "Generate & Export Consolidated Statements", "desc": "Navigate to <strong>Reports &rarr; Profit & Loss</strong>. Review side-by-side totals across entities and export a presentation-ready board pack PDF or live web report link."}
+            {"title": "Connect Your Accounting Platforms", "desc": "Sign in to Joiin, navigate to <strong>Companies &rarr; Add Company</strong>, and select Xero, QuickBooks Online, or Sage. Complete single sign-on authorization for each entity."},
+            {"title": "Configure Group Business Entities", "desc": "Access the <strong>Companies</strong> dashboard tab and select the checkbox next to each subsidiary or franchise entity to include in combined financial statements."},
+            {"title": "Generate & Export Consolidated Statements", "desc": "Navigate to <strong>Reports &rarr; Profit & Loss</strong>. Review side-by-side totals across entities and export a presentation-ready board pack PDF."}
         ]
     },
     "multi-currency-financial-reporting": {
         "title": "Multi-Currency Financial Consolidation Setup Guide",
         "tool": "Joiin",
         "headline": "Combine Foreign Currency Accounts (USD, EUR, GBP, AUD)",
-        "intro": "When your entities trade in different native currencies, manual FX rate math ruins financial reports. Learn how to translate foreign balances automatically.",
+        "intro": "When entities trade in different native currencies, manual FX rate math ruins financial reports. Learn how to translate foreign balances automatically.",
         "time": "8 Mins",
         "prereqs": ["Logins for foreign subsidiary accounting accounts", "Target base presentation currency specified"],
         "steps": [
-            {"title": "Select Master Base Currency", "desc": "Open <strong>Workspace Settings</strong> in Joiin and choose your primary target presentation currency (e.g., USD or EUR). All group total columns will compile in this currency."},
-            {"title": "Automatic Daily FX Rate Synchronization", "desc": "Joiin automatically fetches daily exchange rates from official central banks. P&L line items translate using monthly average rates, while Balance Sheet items apply spot closing rates."}
+            {"title": "Select Master Base Currency", "desc": "Open <strong>Workspace Settings</strong> in Joiin and choose your primary target presentation currency (e.g., USD or EUR). All group total columns compile in this currency."},
+            {"title": "Automatic Daily FX Rate Synchronization", "desc": "Joiin automatically fetches daily exchange rates from central bank feeds. P&L line items translate using monthly average rates, while Balance Sheet items apply spot closing rates."}
         ]
     },
     "intercompany-eliminations-guide": {
@@ -60,7 +60,7 @@ TOPIC_CONFIGS = {
         "prereqs": ["High-resolution brand logo file (PNG/SVG)"],
         "steps": [
             {"title": "Upload Brand Style Assets", "desc": "Navigate to <strong>Settings &rarr; Branding</strong>. Upload your corporate logo and set custom brand hex colors for tables and headers."},
-            {"title": "Compile & Export Report Pack", "desc": "Click <strong>Report Packs &rarr; Create Pack</strong>. Combine Profit & Loss statements, Balance Sheets, and visual KPI widgets into a single exportable PDF package."}
+            {"title": "Compile & Export Report Pack", "desc": "Click <strong>Report Packs &rarr; Create Pack</strong>. Combine Profit & Loss statements, Balance Sheets, and visual KPI widgets into an exportable PDF package."}
         ]
     },
 
@@ -69,11 +69,11 @@ TOPIC_CONFIGS = {
         "title": "How to Automatically Redirect Website Visitors by Country",
         "tool": "Geo Targetly",
         "headline": "Set Up Location-Based IP Redirection for Websites",
-        "intro": "If you operate localized websites (e.g., .com for US, .co.uk for UK), manually sending users to the right version hurts sales. Learn how to auto-redirect traffic by IP address.",
+        "intro": "Operating localized websites (e.g., .com for US, .co.uk for UK) manually hurts conversion rates. Learn how to auto-redirect traffic by IP address.",
         "time": "5 Mins",
         "prereqs": ["Admin access to website header code or tag manager"],
         "steps": [
-            {"title": "Create Location Rules", "desc": "Inside Geo Targetly, create a new <strong>Geo Redirect</strong> location rule (e.g., If visitor IP matches United Kingdom, redirect to /uk-store)."},
+            {"title": "Create Location Rules", "desc": "Inside Geo Targetly, create a new <strong>Geo Redirect</strong> rule (e.g., If visitor IP matches United Kingdom, redirect to /uk-store)."},
             {"title": "Embed Script Tag", "desc": "Copy the provided JavaScript snippet and paste it into the `<head>` tag of your website HTML or tag manager."}
         ]
     },
@@ -86,7 +86,7 @@ TOPIC_CONFIGS = {
         "prereqs": ["E-Commerce store admin access"],
         "steps": [
             {"title": "Configure Target Currencies", "desc": "Set local target currencies (USD, EUR, GBP, CAD) based on country detection in your Geo Targetly dashboard."},
-            {"title": "Activate Automatic Price Conversion", "desc": "Paste the snippet onto product pages to automatically render converted prices based on the user's IP geolocation."}
+            {"title": "Activate Automatic Price Conversion", "desc": "Paste the snippet onto product pages to automatically render converted prices based on visitor IP geolocation."}
         ]
     },
     "block-unwanted-country-traffic-website": {
@@ -110,7 +110,7 @@ TOPIC_CONFIGS = {
         "prereqs": ["Banner image or promo copy text"],
         "steps": [
             {"title": "Design Location Banner Widget", "desc": "Customize banner text, button links, and layout rules for target city or country demographics."},
-            {"title": "Deploy Embed Code", "desc": "Add the single embed script to your site; Geo Targetly automatically filters banner visibility based on visitor location."}
+            {"title": "Deploy Embed Code", "desc": "Add the embed script to your site; Geo Targetly automatically filters banner visibility based on visitor location."}
         ]
     },
 
@@ -119,11 +119,11 @@ TOPIC_CONFIGS = {
         "title": "How to Turn Written Content into Audio Apps",
         "tool": "Audiorista",
         "headline": "Convert Articles & Text into Custom Audio Streams",
-        "intro": "Publishers and creators can easily turn written content into high-quality audio feeds, private podcasts, and branded mobile apps.",
+        "intro": "Publishers and creators can turn written content into high-quality audio feeds, private podcasts, and branded mobile apps.",
         "time": "6 Mins",
         "prereqs": ["RSS feed URL or blog manuscript files"],
         "steps": [
-            {"title": "Import Text Manuscripts or Connect RSS", "desc": "Import text articles directly into Audiorista or connect your website's RSS feed for automatic syncing."},
+            {"title": "Import Text Manuscripts or Connect RSS", "desc": "Import text articles directly into Audiorista or connect your website RSS feed for automatic syncing."},
             {"title": "Generate AI Voiceovers or Upload Audio", "desc": "Use high-fidelity AI text-to-speech engines or upload custom recorded MP3 tracks to create your audio stream."}
         ]
     },
@@ -160,7 +160,208 @@ TOPIC_CONFIGS = {
         "prereqs": ["Existing audience or email list"],
         "steps": [
             {"title": "Configure Subscriber Audio Portal", "desc": "Build exclusive audio playlists and configure access permissions inside Audiorista."},
-            {"title": "Distribute Member Invites", "desc": "Share private streaming access links or embed modern web players into your membership site."}
+            {"title": "Distribute Member Invites", "desc": "Share private streaming access links or embed web players into your membership site."}
+        ]
+    },
+
+    # --- EMAILLISTVERIFY GUIDES ---
+    "bulk-verify-email-lists-reduce-bounces": {
+        "title": "How to Bulk Verify Email Lists & Reduce Bounce Rates",
+        "tool": "EmailListVerify",
+        "headline": "Scrub Marketing & Sales Lists Before Campaign Sending",
+        "intro": "High email bounce rates ruin domain sender reputation and trigger account suspensions. Here is how to scrub email lists clean before sending.",
+        "time": "4 Mins",
+        "prereqs": ["CSV or TXT file of email addresses"],
+        "steps": [
+            {"title": "Upload Email List CSV", "desc": "Sign in to EmailListVerify and click <strong>Verify List &rarr; Upload File</strong>. Select your CSV or TXT file."},
+            {"title": "Download Cleaned Contact File", "desc": "The verification engine automatically checks MX records, syntax, and invalid mailboxes. Export the filtered list of 100% valid addresses."}
+        ]
+    },
+    "clean-spam-traps-email-marketing": {
+        "title": "How to Identify & Remove Spam Traps from Email Lists",
+        "tool": "EmailListVerify",
+        "headline": "Protect Sender Reputation by Eliminating Spam Traps",
+        "intro": "Spam traps hidden inside purchased or old contact lists will blacklist your domain. Learn how to detect and remove spam trap records.",
+        "time": "5 Mins",
+        "prereqs": ["Connected email provider or list export file"],
+        "steps": [
+            {"title": "Run Spam Trap Verification Engine", "desc": "Import your subscriber list into EmailListVerify's automated detection engine."},
+            {"title": "Review Risk Classifications", "desc": "Filter out flagged records classified as spam traps, disposable emails, or catch-all accounts before launching your campaign."}
+        ]
+    },
+    "real-time-api-email-verification-forms": {
+        "title": "How to Validate Email Addresses on Website Forms in Real-Time",
+        "tool": "EmailListVerify",
+        "headline": "Block Fake Email Signups on Web Forms Automatically",
+        "intro": "Stop fake signups and typos from entering your CRM by validating email inputs in real time directly on your signup forms.",
+        "time": "6 Mins",
+        "prereqs": ["EmailListVerify API Key", "Web form admin access"],
+        "steps": [
+            {"title": "Generate Real-Time API Key", "desc": "Navigate to <strong>API Settings</strong> in EmailListVerify and generate a dedicated verification API key."},
+            {"title": "Connect Web Form Endpoint", "desc": "Paste the JavaScript validation code into your sign-up form to trigger immediate background validation before submission."}
+        ]
+    },
+    "prevent-domain-blacklisting-deliverability": {
+        "title": "How to Prevent Email Domain Blacklisting & Fix MX Records",
+        "tool": "EmailListVerify",
+        "headline": "Monitor Domain Blacklists & MX Health Checks",
+        "intro": "If your domain hits a spam blacklist, open rates drop to zero. Learn how to run automated blacklist checks and maintain sender health.",
+        "time": "5 Mins",
+        "prereqs": ["Domain name (e.g., yourcompany.com)"],
+        "steps": [
+            {"title": "Run Domain & MX Health Audit", "desc": "Enter your sending domain into EmailListVerify's blacklist scanner tool."},
+            {"title": "Review Blacklist Status", "desc": "Identify if your IP or domain is listed on global DNS blacklists and execute automated delisting resolution steps."}
+        ]
+    },
+
+    # --- ICOMPASS GUIDES ---
+    "automated-remote-team-task-management": {
+        "title": "How to Automate Task Management for Distributed Remote Teams",
+        "tool": "iCompass",
+        "headline": "Streamline Remote Team Collaboration & Project Tracking",
+        "intro": "Managing hybrid or distributed teams without centralized tracking leads to missed deadlines. Here is how to configure remote team task management.",
+        "time": "8 Mins",
+        "prereqs": ["Admin user account on iCompass"],
+        "steps": [
+            {"title": "Set Up Team Workspace Directory", "desc": "Log in to iCompass and create team project boards grouped by department or client initiative."},
+            {"title": "Assign Directives & Track Milestones", "desc": "Assign individual tasks, attach documentation, and enable real-time status notifications for team members."}
+        ]
+    },
+    "time-zone-tracking-distributed-teams": {
+        "title": "How to Coordinate Cross-Border Teams Across Time Zones",
+        "tool": "iCompass",
+        "headline": "Manage Time Zone Synchronization for Remote Organizations",
+        "intro": "Scheduling meetings across global time zones creates confusion. Learn how to track team availability automatically.",
+        "time": "5 Mins",
+        "prereqs": ["Team member location roster"],
+        "steps": [
+            {"title": "Configure Global User Time Zones", "desc": "Set local time zones for each team member profile inside your iCompass unified directory."},
+            {"title": "Coordinate Asynchronous Workflows", "desc": "Utilize time-zone tracking calendars to schedule meeting windows and asynchronous task handoffs."}
+        ]
+    },
+    "secure-document-sharing-remote-portal": {
+        "title": "How to Set Up a Secure Portal for Remote Document Sharing",
+        "tool": "iCompass",
+        "headline": "Centralize Enterprise Documents with Unified SSL Security",
+        "intro": "Sending sensitive corporate documents via email creates security vulnerabilities. Learn how to build a secure file-sharing repository.",
+        "time": "6 Mins",
+        "prereqs": ["Corporate documents & permission group roster"],
+        "steps": [
+            {"title": "Create Secure Knowledge Base Folders", "desc": "Navigate to the <strong>Portal Software</strong> module and create password-protected document repositories."},
+            {"title": "Set SSL Granular Permissions", "desc": "Assign role-based access rights (View, Edit, Admin) to ensure team members only access authorized files."}
+        ]
+    },
+    "employee-activity-performance-monitoring": {
+        "title": "How to Monitor Remote Staff Productivity & Time Allocation",
+        "tool": "iCompass",
+        "headline": "Track Remote Employee Productivity & Project Hours",
+        "intro": "Gain full visibility into project hours and output across remote teams without micromanaging.",
+        "time": "7 Mins",
+        "prereqs": ["Active iCompass staff organization structure"],
+        "steps": [
+            {"title": "Enable Time Tracking & Activity Logging", "desc": "Activate the <strong>Employee Activity Monitoring</strong> feature inside iCompass for active project assignments."},
+            {"title": "Analyze Utilization Metrics", "desc": "Generate real-time activity reports to review resource allocation, completed tasks, and operational efficiency."}
+        ]
+    },
+
+    # --- WARMUP INBOX GUIDES ---
+    "warm-up-new-email-domain-cold-outreach": {
+        "title": "How to Warm Up a New Email Domain for Cold Outreach",
+        "tool": "Warmup Inbox",
+        "headline": "Automate Domain Warmup to Reach Primary Inboxes",
+        "intro": "Sending cold outreach from a brand new email domain will land your emails directly in spam folders. Here is how to warm up your inbox automatically.",
+        "time": "5 Mins",
+        "prereqs": ["Email account with SMTP/IMAP access enabled", "SPF/DKIM DNS records configured"],
+        "steps": [
+            {"title": "Connect Mailbox via SMTP/IMAP", "desc": "Sign in to Warmup Inbox, click <strong>Add Inbox</strong>, and authenticate your Google Workspace, Outlook, or SMTP account."},
+            {"title": "Enable Automated Engagement Network", "desc": "Warmup Inbox connects your account to 30,000+ real inboxes that exchange, open, reply, and rescue your messages from spam automatically."}
+        ]
+    },
+    "fix-cold-emails-going-to-spam": {
+        "title": "How to Fix Cold Emails Going to Spam & Improve Placement",
+        "tool": "Warmup Inbox",
+        "headline": "Diagnose Deliverability Drop-offs & Rescue Spam Placement",
+        "intro": "If your open rates suddenly drop below 20%, your domain is likely hitting spam folders. Learn how to repair sender reputation.",
+        "time": "6 Mins",
+        "prereqs": ["Warmup Inbox connected account"],
+        "steps": [
+            {"title": "Run Deliverability & DNS Audit", "desc": "Check your inbox health score inside Warmup Inbox to review SPF, DKIM, and DMARC record status."},
+            {"title": "Increase Spam Rescue Activity", "desc": "Set your daily warmup volume to automatically move landed emails out of spam folders and rebuild domain trust."}
+        ]
+    },
+    "blacklist-monitoring-auto-delisting": {
+        "title": "How to Set Up Daily Blacklist Monitoring & Auto-Delisting",
+        "tool": "Warmup Inbox",
+        "headline": "Monitor 100+ Email Blacklists with Automated Alerts",
+        "intro": "Getting listed on a major email blacklist halts all outbound campaigns. Here is how to set up daily monitoring and automated delisting.",
+        "time": "4 Mins",
+        "prereqs": ["Sending domain IP address"],
+        "steps": [
+            {"title": "Activate Daily Blacklist Scanner", "desc": "Warmup Inbox automatically scans your sending domain against 100+ global DNS blacklists daily."},
+            {"title": "Trigger Automated Delisting Protocols", "desc": "If a listing occurs, follow automated delisting workflows inside the dashboard to clear your domain status."}
+        ]
+    },
+    "language-specific-email-warmup-guide": {
+        "title": "How to Run Language-Specific Email Warmup for Global Outreach",
+        "tool": "Warmup Inbox",
+        "headline": "Warm Up Inboxes in Native Target Market Languages",
+        "intro": "Warming up a domain with English messages when targeting European or Asian markets causes spam filters to flag incongruent activity. Here is the fix.",
+        "time": "5 Mins",
+        "prereqs": ["Pro or Max Warmup Inbox plan"],
+        "steps": [
+            {"title": "Select Target Campaign Language", "desc": "Inside inbox settings, choose your primary target language (e.g., German, French, Spanish)."},
+            {"title": "Run Contextual Warmup Peer Conversations", "desc": "The network generates natural, language-specific email exchanges to establish local ISP sender credibility."}
+        ]
+    },
+
+    # --- WOODPECKER GUIDES ---
+    "automated-cold-email-drip-campaigns": {
+        "title": "How to Set Up Automated Cold Email Drip Campaigns",
+        "tool": "Woodpecker",
+        "headline": "Launch Personalised Outbound Email Sequences at Scale",
+        "intro": "Sending cold emails manually takes hours and lacks automated follow-ups. Learn how to launch multi-stage email campaigns with adaptive sending.",
+        "time": "8 Mins",
+        "prereqs": ["Woodpecker account", "Prospect CSV list or B2B lead list"],
+        "steps": [
+            {"title": "Connect Outbound Mailbox", "desc": "Sign in to Woodpecker and link your email account with built-in deliverability monitoring."},
+            {"title": "Build Multi-Step Sequence & Condition Triggers", "desc": "Write your initial cold email and set conditional follow-ups (e.g., If no reply after 3 days, send Follow-up B)."},
+            {"title": "Import Prospects & Launch", "desc": "Upload your verified lead list and click <strong>Start Campaign</strong> to begin human-like adaptive sending."}
+        ]
+    },
+    "linkedin-cold-outreach-automation-guide": {
+        "title": "How to Automate LinkedIn & Email Multichannel Outreach",
+        "tool": "Woodpecker",
+        "headline": "Combine LinkedIn Automation with Cold Email Sequences",
+        "intro": "Combining cold email with LinkedIn profile visits and message connection requests dramatically increases meeting booking rates.",
+        "time": "10 Mins",
+        "prereqs": ["LinkedIn account credentials"],
+        "steps": [
+            {"title": "Connect LinkedIn Integration", "desc": "Link your LinkedIn account inside Woodpecker's campaign workflow console."},
+            {"title": "Add LinkedIn Action Steps to Sequence", "desc": "Insert automated LinkedIn profile visits, connection invites, and direct messages alongside your email steps."}
+        ]
+    },
+    "inbox-rotation-deliverability-cold-email": {
+        "title": "How to Set Up Inbox Rotation to Scale Outbound Email",
+        "tool": "Woodpecker",
+        "headline": "Distribute Campaign Sending Across Multiple Mailboxes",
+        "intro": "Sending 500 emails a day from one email account triggers spam filters. Learn how to rotate sending across multiple accounts seamlessly.",
+        "time": "7 Mins",
+        "prereqs": ["2 or more secondary email accounts"],
+        "steps": [
+            {"title": "Add Sending Accounts to Rotation Pool", "desc": "In Woodpecker, connect multiple sending domains to your organization account."},
+            {"title": "Enable Campaign Inbox Rotation", "desc": "Assign the inbox pool to your active campaign. Woodpecker automatically distributes sending volume evenly across all accounts."}
+        ]
+    },
+    "b2b-prospect-lead-database-outreach": {
+        "title": "How to Find & Export B2B Leads for Cold Email Campaigns",
+        "tool": "Woodpecker",
+        "headline": "Search B2B Lead Databases & Import Directly to Campaigns",
+        "intro": "Finding verified decision-maker email addresses takes hours. Here is how to search a B2B database and populate campaign sequences instantly.",
+        "time": "6 Mins",
+        "prereqs": ["Target ideal customer profile (ICP) criteria"],
+        "steps": [
+            {"title": "Search B2B Lead Finder", "desc": "Use Woodpecker's B2B Lead Finder tool to filter contacts by industry, job title, company size, and location."},
+            {"title": "Export Verified Leads to Campaign", "desc": "Select target contacts and import them directly into your active cold email campaign with built-in verification."}
         ]
     }
 }
@@ -173,12 +374,12 @@ for key, link in links.items():
         "title": f"How to Set Up {key.replace('-', ' ').title()}",
         "tool": "Official Portal",
         "headline": f"Integration Guide for {key.replace('-', ' ').title()}",
-        "intro": "Follow this beginner-friendly step-by-step setup guide.",
+        "intro": "Follow this step-by-step technical implementation manual.",
         "time": "5 Mins",
         "prereqs": ["Admin access to platform dashboard"],
         "steps": [
-            {"title": "Initialize Integration", "desc": "Log in to the management dashboard and configure your workspace settings."},
-            {"title": "Verify Deployment", "desc": "Test the connection and verify live data syncs."}
+            {"title": "Initialize Configuration", "desc": "Log in to the administration portal and configure settings."},
+            {"title": "Verify Deployment Status", "desc": "Run integration diagnostics to confirm live operation."}
         ]
     })
     
@@ -520,5 +721,7 @@ index_html = f"""<!DOCTYPE html>
 
 with open('index.html', 'w', encoding='utf-8') as f:
     f.write(index_html)
+
+print("Build completed successfully!")
 
 print("Build completed successfully!")
