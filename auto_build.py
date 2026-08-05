@@ -10,13 +10,14 @@ with open('links.json', 'r') as f:
     links = json.load(f)
 
 os.makedirs('pages', exist_ok=True)
-generated_guides = []
 
+# Grouped manuals categorized by tool software
 TOPIC_CONFIGS = {
     # --- JOIIN GUIDES ---
     "consolidate-xero-quickbooks": {
         "title": "How to Consolidate Multiple Xero & QuickBooks Accounts",
         "tool": "Joiin",
+        "category": "Financial Consolidation",
         "headline": "Combining Multi-Company Accounts into One Financial Report",
         "intro": "Trying to combine multiple Xero or QuickBooks company accounts in Excel leads to formula errors and broken links. This guide shows you how to automate group financial reporting in under 10 minutes.",
         "time": "10 Mins",
@@ -30,6 +31,7 @@ TOPIC_CONFIGS = {
     "multi-currency-financial-reporting": {
         "title": "Multi-Currency Financial Consolidation Setup Guide",
         "tool": "Joiin",
+        "category": "Financial Consolidation",
         "headline": "Combine Foreign Currency Accounts (USD, EUR, GBP, AUD)",
         "intro": "When entities trade in different native currencies, manual FX rate math ruins financial reports. Learn how to translate foreign balances automatically.",
         "time": "8 Mins",
@@ -42,6 +44,7 @@ TOPIC_CONFIGS = {
     "intercompany-eliminations-guide": {
         "title": "Automating Intercompany Balance & Loan Eliminations",
         "tool": "Joiin",
+        "category": "Financial Consolidation",
         "headline": "Remove Internal Trading & Double-Counted Revenue",
         "intro": "Internal management fees and intercompany loans artificially inflate group income. Here is how to strip out internal trading cleanly.",
         "time": "7 Mins",
@@ -54,6 +57,7 @@ TOPIC_CONFIGS = {
     "automated-board-packs-and-kpi-reports": {
         "title": "How to Build Branded Executive Board Packs in Minutes",
         "tool": "Joiin",
+        "category": "Financial Consolidation",
         "headline": "Create Professional PDF Management Packs for Directors",
         "intro": "Stop spending hours copying numbers into PowerPoint. Learn how to generate branded financial presentation decks automatically.",
         "time": "5 Mins",
@@ -68,6 +72,7 @@ TOPIC_CONFIGS = {
     "geo-redirect-website-visitors-by-country": {
         "title": "How to Automatically Redirect Website Visitors by Country",
         "tool": "Geo Targetly",
+        "category": "Website Location & Traffic",
         "headline": "Set Up Location-Based IP Redirection for Websites",
         "intro": "Operating localized websites (e.g., .com for US, .co.uk for UK) manually hurts conversion rates. Learn how to auto-redirect traffic by IP address.",
         "time": "5 Mins",
@@ -80,6 +85,7 @@ TOPIC_CONFIGS = {
     "auto-currency-switcher-location": {
         "title": "How to Display Local Currency Based on Visitor Location",
         "tool": "Geo Targetly",
+        "category": "Website Location & Traffic",
         "headline": "Automate Currency Switchers for Global E-Commerce",
         "intro": "Showing USD prices to European or UK shoppers leads to high cart abandonment. Here is how to automatically display prices in local currency.",
         "time": "6 Mins",
@@ -92,6 +98,7 @@ TOPIC_CONFIGS = {
     "block-unwanted-country-traffic-website": {
         "title": "How to Block Traffic or Restrict Access by Country",
         "tool": "Geo Targetly",
+        "category": "Website Location & Traffic",
         "headline": "Block Specific Countries or Regions from Viewing Your Site",
         "intro": "Prevent fraud, spam, or licensing violations by restricting access from specific geographic locations.",
         "time": "4 Mins",
@@ -104,6 +111,7 @@ TOPIC_CONFIGS = {
     "location-based-popup-banners": {
         "title": "How to Show Location-Specific Popups & Banners",
         "tool": "Geo Targetly",
+        "category": "Website Location & Traffic",
         "headline": "Display Targeted Promotions Based on Visitor City or Country",
         "intro": "Increase conversions by showing targeted shipping offers, local events, or localized announcements.",
         "time": "5 Mins",
@@ -118,6 +126,7 @@ TOPIC_CONFIGS = {
     "convert-articles-audio-app-podcast": {
         "title": "How to Turn Written Content into Audio Apps",
         "tool": "Audiorista",
+        "category": "Audio Publishing & Mobile Apps",
         "headline": "Convert Articles & Text into Custom Audio Streams",
         "intro": "Publishers and creators can turn written content into high-quality audio feeds, private podcasts, and branded mobile apps.",
         "time": "6 Mins",
@@ -130,6 +139,7 @@ TOPIC_CONFIGS = {
     "monetize-audiobooks-private-audio-apps": {
         "title": "How to Sell Audiobooks & Premium Podcasts on Your App",
         "tool": "Audiorista",
+        "category": "Audio Publishing & Mobile Apps",
         "headline": "Monetize Audio Content Directly Without Platform Fees",
         "intro": "Avoid massive app store cuts and build a subscription platform for audiobooks and courses.",
         "time": "8 Mins",
@@ -142,6 +152,7 @@ TOPIC_CONFIGS = {
     "publish-white-label-audiobook-app": {
         "title": "How to Build a White-Label Audiobook App",
         "tool": "Audiorista",
+        "category": "Audio Publishing & Mobile Apps",
         "headline": "Launch Your Own Branded Audio Streaming App",
         "intro": "Publish an iOS and Android app under your company name without writing custom code.",
         "time": "10 Mins",
@@ -154,6 +165,7 @@ TOPIC_CONFIGS = {
     "branded-audio-app-for-creators": {
         "title": "Branded Audio Platform Setup Guide for Creators",
         "tool": "Audiorista",
+        "category": "Audio Publishing & Mobile Apps",
         "headline": "Build Private Podcasts & Paid Audio Communities",
         "intro": "Engage your audience with exclusive audio content, subscriber feeds, and branded mobile apps.",
         "time": "5 Mins",
@@ -168,6 +180,7 @@ TOPIC_CONFIGS = {
     "bulk-verify-email-lists-reduce-bounces": {
         "title": "How to Bulk Verify Email Lists & Reduce Bounce Rates",
         "tool": "EmailListVerify",
+        "category": "Email Verification & Deliverability",
         "headline": "Scrub Marketing & Sales Lists Before Campaign Sending",
         "intro": "High email bounce rates ruin domain sender reputation and trigger account suspensions. Here is how to scrub email lists clean before sending.",
         "time": "4 Mins",
@@ -180,6 +193,7 @@ TOPIC_CONFIGS = {
     "clean-spam-traps-email-marketing": {
         "title": "How to Identify & Remove Spam Traps from Email Lists",
         "tool": "EmailListVerify",
+        "category": "Email Verification & Deliverability",
         "headline": "Protect Sender Reputation by Eliminating Spam Traps",
         "intro": "Spam traps hidden inside purchased or old contact lists will blacklist your domain. Learn how to detect and remove spam trap records.",
         "time": "5 Mins",
@@ -192,6 +206,7 @@ TOPIC_CONFIGS = {
     "real-time-api-email-verification-forms": {
         "title": "How to Validate Email Addresses on Website Forms in Real-Time",
         "tool": "EmailListVerify",
+        "category": "Email Verification & Deliverability",
         "headline": "Block Fake Email Signups on Web Forms Automatically",
         "intro": "Stop fake signups and typos from entering your CRM by validating email inputs in real time directly on your signup forms.",
         "time": "6 Mins",
@@ -204,6 +219,7 @@ TOPIC_CONFIGS = {
     "prevent-domain-blacklisting-deliverability": {
         "title": "How to Prevent Email Domain Blacklisting & Fix MX Records",
         "tool": "EmailListVerify",
+        "category": "Email Verification & Deliverability",
         "headline": "Monitor Domain Blacklists & MX Health Checks",
         "intro": "If your domain hits a spam blacklist, open rates drop to zero. Learn how to run automated blacklist checks and maintain sender health.",
         "time": "5 Mins",
@@ -218,6 +234,7 @@ TOPIC_CONFIGS = {
     "automated-remote-team-task-management": {
         "title": "How to Automate Task Management for Distributed Remote Teams",
         "tool": "iCompass",
+        "category": "Remote Work & Team Management",
         "headline": "Streamline Remote Team Collaboration & Project Tracking",
         "intro": "Managing hybrid or distributed teams without centralized tracking leads to missed deadlines. Here is how to configure remote team task management.",
         "time": "8 Mins",
@@ -230,6 +247,7 @@ TOPIC_CONFIGS = {
     "time-zone-tracking-distributed-teams": {
         "title": "How to Coordinate Cross-Border Teams Across Time Zones",
         "tool": "iCompass",
+        "category": "Remote Work & Team Management",
         "headline": "Manage Time Zone Synchronization for Remote Organizations",
         "intro": "Scheduling meetings across global time zones creates confusion. Learn how to track team availability automatically.",
         "time": "5 Mins",
@@ -242,6 +260,7 @@ TOPIC_CONFIGS = {
     "secure-document-sharing-remote-portal": {
         "title": "How to Set Up a Secure Portal for Remote Document Sharing",
         "tool": "iCompass",
+        "category": "Remote Work & Team Management",
         "headline": "Centralize Enterprise Documents with Unified SSL Security",
         "intro": "Sending sensitive corporate documents via email creates security vulnerabilities. Learn how to build a secure file-sharing repository.",
         "time": "6 Mins",
@@ -254,6 +273,7 @@ TOPIC_CONFIGS = {
     "employee-activity-performance-monitoring": {
         "title": "How to Monitor Remote Staff Productivity & Time Allocation",
         "tool": "iCompass",
+        "category": "Remote Work & Team Management",
         "headline": "Track Remote Employee Productivity & Project Hours",
         "intro": "Gain full visibility into project hours and output across remote teams without micromanaging.",
         "time": "7 Mins",
@@ -268,6 +288,7 @@ TOPIC_CONFIGS = {
     "warm-up-new-email-domain-cold-outreach": {
         "title": "How to Warm Up a New Email Domain for Cold Outreach",
         "tool": "Warmup Inbox",
+        "category": "Email Deliverability & Outreach",
         "headline": "Automate Domain Warmup to Reach Primary Inboxes",
         "intro": "Sending cold outreach from a brand new email domain will land your emails directly in spam folders. Here is how to warm up your inbox automatically.",
         "time": "5 Mins",
@@ -280,6 +301,7 @@ TOPIC_CONFIGS = {
     "fix-cold-emails-going-to-spam": {
         "title": "How to Fix Cold Emails Going to Spam & Improve Placement",
         "tool": "Warmup Inbox",
+        "category": "Email Deliverability & Outreach",
         "headline": "Diagnose Deliverability Drop-offs & Rescue Spam Placement",
         "intro": "If your open rates suddenly drop below 20%, your domain is likely hitting spam folders. Learn how to repair sender reputation.",
         "time": "6 Mins",
@@ -292,6 +314,7 @@ TOPIC_CONFIGS = {
     "blacklist-monitoring-auto-delisting": {
         "title": "How to Set Up Daily Blacklist Monitoring & Auto-Delisting",
         "tool": "Warmup Inbox",
+        "category": "Email Deliverability & Outreach",
         "headline": "Monitor 100+ Email Blacklists with Automated Alerts",
         "intro": "Getting listed on a major email blacklist halts all outbound campaigns. Here is how to set up daily monitoring and automated delisting.",
         "time": "4 Mins",
@@ -304,6 +327,7 @@ TOPIC_CONFIGS = {
     "language-specific-email-warmup-guide": {
         "title": "How to Run Language-Specific Email Warmup for Global Outreach",
         "tool": "Warmup Inbox",
+        "category": "Email Deliverability & Outreach",
         "headline": "Warm Up Inboxes in Native Target Market Languages",
         "intro": "Warming up a domain with English messages when targeting European or Asian markets causes spam filters to flag incongruent activity. Here is the fix.",
         "time": "5 Mins",
@@ -318,6 +342,7 @@ TOPIC_CONFIGS = {
     "automated-cold-email-drip-campaigns": {
         "title": "How to Set Up Automated Cold Email Drip Campaigns",
         "tool": "Woodpecker",
+        "category": "Sales Automation & Cold Outreach",
         "headline": "Launch Personalised Outbound Email Sequences at Scale",
         "intro": "Sending cold emails manually takes hours and lacks automated follow-ups. Learn how to launch multi-stage email campaigns with adaptive sending.",
         "time": "8 Mins",
@@ -331,6 +356,7 @@ TOPIC_CONFIGS = {
     "linkedin-cold-outreach-automation-guide": {
         "title": "How to Automate LinkedIn & Email Multichannel Outreach",
         "tool": "Woodpecker",
+        "category": "Sales Automation & Cold Outreach",
         "headline": "Combine LinkedIn Automation with Cold Email Sequences",
         "intro": "Combining cold email with LinkedIn profile visits and message connection requests dramatically increases meeting booking rates.",
         "time": "10 Mins",
@@ -343,6 +369,7 @@ TOPIC_CONFIGS = {
     "inbox-rotation-deliverability-cold-email": {
         "title": "How to Set Up Inbox Rotation to Scale Outbound Email",
         "tool": "Woodpecker",
+        "category": "Sales Automation & Cold Outreach",
         "headline": "Distribute Campaign Sending Across Multiple Mailboxes",
         "intro": "Sending 500 emails a day from one email account triggers spam filters. Learn how to rotate sending across multiple accounts seamlessly.",
         "time": "7 Mins",
@@ -355,6 +382,7 @@ TOPIC_CONFIGS = {
     "b2b-prospect-lead-database-outreach": {
         "title": "How to Find & Export B2B Leads for Cold Email Campaigns",
         "tool": "Woodpecker",
+        "category": "Sales Automation & Cold Outreach",
         "headline": "Search B2B Lead Databases & Import Directly to Campaigns",
         "intro": "Finding verified decision-maker email addresses takes hours. Here is how to search a B2B database and populate campaign sequences instantly.",
         "time": "6 Mins",
@@ -366,6 +394,9 @@ TOPIC_CONFIGS = {
     }
 }
 
+# Dictionary to organize items by Software Vendor
+tools_dict = {}
+
 for key, link in links.items():
     filename = f"{key}.html"
     filepath = os.path.join('pages', filename)
@@ -373,6 +404,7 @@ for key, link in links.items():
     cfg = TOPIC_CONFIGS.get(key, {
         "title": f"How to Set Up {key.replace('-', ' ').title()}",
         "tool": "Official Portal",
+        "category": "General Integration",
         "headline": f"Integration Guide for {key.replace('-', ' ').title()}",
         "intro": "Follow this step-by-step technical implementation manual.",
         "time": "5 Mins",
@@ -618,17 +650,40 @@ for key, link in links.items():
     with open(filepath, 'w', encoding='utf-8') as f:
         f.write(html_content.strip())
 
-    generated_guides.append({'slug': filename, 'title': cfg['headline'], 'tool': cfg['tool']})
+    tool_name = cfg['tool']
+    if tool_name not in tools_dict:
+        tools_dict[tool_name] = []
+    
+    tools_dict[tool_name].append({
+        'slug': filename,
+        'title': cfg['headline'],
+        'category': cfg.get('category', 'SaaS Manuals')
+    })
 
-cards_html = ""
-for item in generated_guides:
-    cards_html += f"""
-    <div class="card">
-      <div>
-        <span class="card-tag">{item['tool']}</span>
-        <h3><a href="/pages/{item['slug']}">{item['title']}</a></h3>
+# Build Sectioned Layout for Homepage
+sections_html = ""
+for tool, manuals in tools_dict.items():
+    cards_in_section = ""
+    for item in manuals:
+        cards_in_section += f"""
+        <div class="card manual-card" data-title="{item['title'].lower()}" data-tool="{tool.lower()}">
+          <div>
+            <span class="card-tag">{item['category']}</span>
+            <h3><a href="/pages/{item['slug']}">{item['title']}</a></h3>
+          </div>
+          <a href="/pages/{item['slug']}" class="card-arrow">&rarr;</a>
+        </div>
+        """
+    
+    sections_html += f"""
+    <div class="tool-section" data-section-tool="{tool.lower()}">
+      <div class="tool-header">
+        <h2>🔧 {tool} Documentation & Manuals</h2>
+        <span class="tool-count">{len(manuals)} Guides</span>
       </div>
-      <a href="/pages/{item['slug']}" class="card-arrow">&rarr;</a>
+      <div class="grid">
+        {cards_in_section}
+      </div>
     </div>
     """
 
@@ -637,11 +692,11 @@ index_html = f"""<!DOCTYPE html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Stack Manuals - Technical SaaS Integration Manuals</title>
+  <title>Stack Manuals - Technical SaaS Integration Directory</title>
   <style>
     body {{
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      max-width: 880px;
+      max-width: 920px;
       margin: 0 auto;
       padding: 50px 20px;
       color: #0f172a;
@@ -649,28 +704,70 @@ index_html = f"""<!DOCTYPE html>
     }}
     .header {{
       text-align: center;
-      margin-bottom: 45px;
+      margin-bottom: 35px;
     }}
     h1 {{
-      font-size: 2.4rem;
+      font-size: 2.5rem;
       margin: 0 0 10px 0;
       color: #0f172a;
     }}
     p.subtitle {{
       color: #64748b;
       font-size: 1.15rem;
+      margin: 0 0 30px 0;
+    }}
+    .search-box-wrapper {{
+      position: relative;
+      max-width: 600px;
+      margin: 0 auto 40px auto;
+    }}
+    .search-input {{
+      width: 100%;
+      padding: 16px 20px;
+      font-size: 1.05rem;
+      border: 2px solid #e2e8f0;
+      border-radius: 10px;
+      outline: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+      transition: all 0.2s ease;
+    }}
+    .search-input:focus {{
+      border-color: #0070f3;
+      box-shadow: 0 4px 16px rgba(0, 112, 243, 0.12);
+    }}
+    .tool-section {{
+      margin-bottom: 45px;
+    }}
+    .tool-header {{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }}
+    .tool-header h2 {{
+      font-size: 1.4rem;
       margin: 0;
+      color: #0f172a;
+    }}
+    .tool-count {{
+      background: #e2e8f0;
+      color: #475569;
+      font-weight: 700;
+      font-size: 0.8rem;
+      padding: 4px 10px;
+      border-radius: 999px;
     }}
     .grid {{
       display: grid;
       gap: 16px;
-      margin-top: 30px;
     }}
     .card {{
       background: white;
       border: 1px solid #e2e8f0;
       border-radius: 10px;
-      padding: 22px 26px;
+      padding: 20px 24px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -694,7 +791,7 @@ index_html = f"""<!DOCTYPE html>
     }}
     .card h3 {{
       margin: 8px 0 0 0;
-      font-size: 1.15rem;
+      font-size: 1.1rem;
     }}
     .card h3 a {{
       text-decoration: none;
@@ -708,20 +805,76 @@ index_html = f"""<!DOCTYPE html>
       font-weight: bold;
       padding-left: 20px;
     }}
+    .no-results {{
+      display: none;
+      text-align: center;
+      padding: 40px;
+      color: #64748b;
+      font-size: 1.1rem;
+    }}
   </style>
 </head>
 <body>
+
   <div class="header">
     <h1>🛠️ Stack Manuals</h1>
-    <p class="subtitle">Step-by-step setup guides, integration manuals, and SaaS tutorials.</p>
+    <p class="subtitle">Searchable step-by-step technical guides, integration manuals, and SaaS tutorials.</p>
+
+    <div class="search-box-wrapper">
+      <input type="text" id="manualSearch" class="search-input" placeholder="🔍 Search guides (e.g., 'Xero', 'email', 'redirect')..." onkeyup="filterManuals()">
+    </div>
   </div>
-  <div class="grid">{cards_html}</div>
+
+  <div id="noResults" class="no-results">
+    No guides found matching your search. Try searching for "Email", "Joiin", or "Outreach".
+  </div>
+
+  <div id="sectionsContainer">
+    {sections_html}
+  </div>
+
+  <script>
+    function filterManuals() {{
+      const query = document.getElementById('manualSearch').value.toLowerCase().trim();
+      const cards = document.querySelectorAll('.manual-card');
+      const sections = document.querySelectorAll('.tool-section');
+      let visibleCount = 0;
+
+      cards.forEach(card => {{
+        const title = card.getAttribute('data-title');
+        const tool = card.getAttribute('data-tool');
+
+        if (title.includes(query) || tool.includes(query)) {{
+          card.style.display = 'flex';
+          visibleCount++;
+        }} else {{
+          card.style.display = 'none';
+        }}
+      }});
+
+      // Hide sections with no matching visible cards
+      sections.forEach(section => {{
+        const visibleCardsInSection = section.querySelectorAll('.manual-card[style*="display: flex"]');
+        if (visibleCardsInSection.length === 0 && query !== '') {{
+          section.style.display = 'none';
+        }} else {{
+          section.style.display = 'block';
+        }}
+      }});
+
+      const noResults = document.getElementById('noResults');
+      if (visibleCount === 0 && query !== '') {{
+        noResults.style.display = 'block';
+      }} else {{
+        noResults.style.display = 'none';
+      }}
+    }}
+  </script>
+
 </body>
 </html>"""
 
 with open('index.html', 'w', encoding='utf-8') as f:
     f.write(index_html)
-
-print("Build completed successfully!")
 
 print("Build completed successfully!")
