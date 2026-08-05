@@ -17,50 +17,105 @@ for key, link in links.items():
     filepath = os.path.join('pages', filename)
     title = key.replace('-', ' ').title()
     
-    # Pure HTML template generated cleanly without external API limits
     html_content = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{title} - Integration & Setup Guide</title>
+  <title>How to Set Up {title}: Step-by-Step Multi-Entity Financial Consolidation</title>
+  <meta name="description" content="Step-by-step guide to connecting Xero, QuickBooks, or Sage to {title} for automated multi-entity financial reporting and consolidated P&L balance sheets.">
   <style>
     body {{
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      max-width: 800px;
+      max-width: 850px;
       margin: 40px auto;
       padding: 0 20px;
       line-height: 1.6;
-      color: #1a202c;
+      color: #1f2937;
     }}
-    h1 {{ font-size: 2.2rem; color: #111827; }}
     .badge {{ display: inline-block; background: #e0f2fe; color: #0369a1; padding: 4px 12px; border-radius: 9999px; font-weight: 600; font-size: 0.875rem; }}
-    .cta-box {{ background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px; margin: 30px 0; text-align: center; }}
-    .btn {{ display: inline-block; background: #0070f3; color: white; text-decoration: none; padding: 12px 24px; border-radius: 6px; font-weight: bold; font-size: 1rem; margin-top: 12px; }}
+    h1 {{ font-size: 2.25rem; color: #111827; margin-top: 10px; }}
+    h2 {{ font-size: 1.5rem; color: #1f2937; border-bottom: 2px solid #f3f4f6; padding-bottom: 8px; margin-top: 35px; }}
+    .meta-box {{ background: #f9fafb; border-left: 4px solid #0070f3; padding: 16px; margin: 20px 0; border-radius: 0 8px 8px 0; }}
+    .step-number {{ display: inline-block; background: #0070f3; color: white; border-radius: 50%; width: 28px; height: 28px; text-align: center; line-height: 28px; font-weight: bold; margin-right: 8px; }}
+    .image-container {{ background: #f3f4f6; border: 2px dashed #cbd5e1; border-radius: 8px; padding: 30px; text-align: center; margin: 15px 0 25px 0; color: #64748b; font-weight: 500; }}
+    .cta-box {{ background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 12px; padding: 28px; margin: 40px 0; text-align: center; }}
+    .btn {{ display: inline-block; background: #0070f3; color: white; text-decoration: none; padding: 14px 28px; border-radius: 8px; font-weight: bold; font-size: 1.1rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }}
     .btn:hover {{ background: #0051a2; }}
-    ul {{ padding-left: 20px; }}
-    li {{ margin-bottom: 8px; }}
+    table {{ width: 100%; border-collapse: collapse; margin: 20px 0; }}
+    th, td {{ border: 1px solid #e5e7eb; padding: 12px; text-align: left; }}
+    th {{ background: #f9fafb; }}
   </style>
 </head>
 <body>
-  <span class="badge">Technical Guide</span>
-  <h1>{title} Integration & Workflow Guide</h1>
-  <p>This document provides setup steps for configuring {title} for CFOs, financial managers, and accounting departments.</p>
-  
-  <h2>Key Capabilities</h2>
-  <ul>
-    <li>Multi-entity data consolidation and automated reporting workflows.</li>
-    <li>Direct synchronization with primary ledger platforms (Xero, QuickBooks, NetSuite).</li>
-    <li>Audit-ready report exports and custom variance tracking templates.</li>
-  </ul>
 
-  <div class="cta-box">
-    <h3>Ready to deploy {title}?</h3>
-    <p>Access the official platform setup portal below:</p>
-    <a href="{link}" class="btn" target="_blank" rel="noopener">Launch {title} Portal &rarr;</a>
+  <span class="badge">Integration Manual & Verification Guide</span>
+  <h1>How to Set Up {title} for Multi-Entity Financial Consolidation</h1>
+
+  <div class="meta-box">
+    <strong>Solution Summary:</strong> Connect multiple accounting organizations (Xero, QuickBooks Online, Sage) into a single unified workspace using {title}. This workflow automates intercompany eliminations, multi-currency conversions, and consolidated P&L reporting.
   </div>
 
-  <p><a href="/" style="color: #666; text-decoration: none;">&larr; Back to Stack Manuals</a></p>
+  <h2>Prerequisites</h2>
+  <ul>
+    <li>Active admin credentials for your accounting platform (Xero, QuickBooks, Sage, or spreadsheet files).</li>
+    <li>An active account or free trial via the <a href="{link}">Official {title} Platform Portal</a>.</li>
+  </ul>
+
+  <h2>Step-by-Step Setup Instructions</h2>
+
+  <h3><span class="step-number">1</span> Launch the Portal & Initialize Workspace</h3>
+  <p>Navigate to the registration page and log in to your account. Click on <strong>Create New Workspace</strong> from your main user dashboard.</p>
+
+  <div class="image-container">
+    📸 <strong>[Image Placeholder: Dashboard Workspace Creation Screen]</strong><br>
+    <em>Visual: Main dashboard view showing the "Add Companies / Create Workspace" button.</em>
+  </div>
+
+  <h3><span class="step-number">2</span> Connect Primary Accounting Entities</h3>
+  <p>Click <strong>Companies</strong> on the left navigation menu, then select <strong>Add Company</strong>. Choose your primary software vendor (e.g., Xero, QuickBooks, or Sage) and complete the single-sign-on permission workflow.</p>
+
+  <div class="image-container">
+    📸 <strong>[Image Placeholder: Accounting Integration Selection Screen]</strong><br>
+    <em>Visual: Integration grid displaying Xero, QuickBooks, Sage, and Excel connection prompts.</em>
+  </div>
+
+  <h3><span class="step-number">3</span> Map Chart of Accounts & Set Exchange Rates</h3>
+  <p>For organizations operating across currencies, configure your base reporting currency. The platform automatically pulls daily exchange rates and maps mismatched general ledger (GL) accounts across parent and child entities.</p>
+
+  <div class="image-container">
+    📸 <strong>[Image Placeholder: Chart of Accounts & Currency Mapping Console]</strong><br>
+    <em>Visual: Account mapping table matching child entity accounts to the group parent structure.</em>
+  </div>
+
+  <h3><span class="step-number">4</span> Run Consolidated Reports & Export Board Packs</h3>
+  <p>Navigate to the <strong>Reports</strong> tab. Select <strong>Consolidated Profit & Loss</strong> or <strong>Consolidated Balance Sheet</strong>. Apply intercompany balance eliminations with one click and export as a PDF board pack or Excel file.</p>
+
+  <div class="image-container">
+    📸 <strong>[Image Placeholder: Final Consolidated Financial Report View]</strong><br>
+    <em>Visual: Clean multi-entity financial statement showing group totals and eliminations.</em>
+  </div>
+
+  <div class="cta-box">
+    <h2>Ready to automate your financial consolidation?</h2>
+    <p>Get started with automated reporting and multi-entity consolidation in under 10 minutes.</p>
+    <a href="{link}" class="btn" target="_blank" rel="noopener">Access Official {title} Setup Portal &rarr;</a>
+  </div>
+
+  <h2>System Compatibility Overview</h2>
+  <table>
+    <tr>
+      <th>Supported Ledger Integrations</th>
+      <th>Key Automated Features</th>
+    </tr>
+    <tr>
+      <td>Xero, QuickBooks Online, Sage, Pennylane, Excel/CSV</td>
+      <td>Multi-currency conversion, Intercompany eliminations, Automated Board Packs</td>
+    </tr>
+  </table>
+
+  <p><a href="/" style="color: #666; text-decoration: none;">&larr; Back to Stack Manuals Index</a></p>
+
 </body>
 </html>"""
 
@@ -71,52 +126,25 @@ for key, link in links.items():
 
 cards_html = ""
 for item in generated_guides:
-    cards_html += f'<li class="card">📌 <a href="/pages/{item["slug"]}">{item["title"]} Setup Guide</a></li>\n'
+    cards_html += f'<li class="card">📌 <a href="/pages/{item["slug"]}">{item["title"]} Integration & Setup Guide</a></li>\n'
 
 index_html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Stack Manuals - B2B SaaS Integration Guides</title>
+  <title>Stack Manuals - Technical SaaS Integration Guides</title>
   <style>
-    body {{
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
-      color: #333;
-    }}
-    h1 {{ font-size: 2.2rem; }}
-    p.subtitle {{ color: #666; font-size: 1.1rem; margin-bottom: 30px; }}
+    body {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 850px; margin: 40px auto; padding: 0 20px; color: #333; }}
     ul {{ list-style: none; padding: 0; }}
-    .card {{
-      border: 1px solid #e2e8f0;
-      border-radius: 8px;
-      padding: 16px 20px;
-      margin-bottom: 12px;
-      transition: all 0.2s ease;
-    }}
-    .card:hover {{
-      border-color: #0070f3;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }}
-    .card a {{
-      text-decoration: none;
-      color: #0070f3;
-      font-weight: 600;
-      font-size: 1.1rem;
-    }}
+    .card {{ border: 1px solid #e2e8f0; border-radius: 8px; padding: 18px; margin-bottom: 12px; }}
+    .card a {{ text-decoration: none; color: #0070f3; font-weight: 600; font-size: 1.1rem; }}
   </style>
 </head>
 <body>
   <h1>🛠️ Stack Manuals</h1>
-  <p class="subtitle">Technical documentation, workflow integrations, and setup manuals for B2B SaaS tools.</p>
-
-  <h2>Available Documentation Guides</h2>
-  <ul>
-    {cards_html}
-  </ul>
+  <p>Step-by-step integration procedures and technical setup documentation for modern business platforms.</p>
+  <ul>{cards_html}</ul>
 </body>
 </html>"""
 
