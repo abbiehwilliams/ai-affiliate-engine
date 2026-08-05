@@ -11,8 +11,131 @@ with open('links.json', 'r') as f:
 
 os.makedirs('pages', exist_ok=True)
 
-# Grouped manuals categorized by tool software
 TOPIC_CONFIGS = {
+    # --- AHASLIDES GUIDES ---
+    "interactive-presentation-live-polls-quiz": {
+        "title": "How to Create Interactive Presentations with Live Polls & Quizzes",
+        "tool": "AhaSlides",
+        "category": "Presentations & Audience Engagement",
+        "headline": "Transform Static Decks into Live Audience-Engaging Presentations",
+        "intro": "Boring PowerPoint slides alienate audiences. Learn how to convert static presentations into live interactive sessions where participants vote, answer quizzes, and submit feedback via their smartphones in real time.",
+        "time": "5 Mins",
+        "prereqs": ["Existing presentation topic or slide outline", "Smartphone or computer for host setup"],
+        "steps": [
+            {"title": "Initialize Your Interactive Deck", "desc": "Log in to AhaSlides and click <strong>Create Presentation</strong>. Choose whether to start from scratch or import existing PowerPoint (.pptx) or Google Slides files into the cloud editor."},
+            {"title": "Embed Live Interactive Poll & Quiz Slides", "desc": "Click <strong>Add Slide</strong> and select your desired interaction type: Multiple Choice Poll, Live Quiz, Word Cloud, or Rating Scale. Type your question and configure answer choices or point values."},
+            {"title": "Display QR Code & Launch Live Presentation", "desc": "Click <strong>Present</strong>. A large QR code and URL join-code will render at the top of the screen. Audience members scan the code with their mobile cameras to join and interact instantly without downloading an app."}
+        ],
+        "tip": "Enable background music and countdown timers in the slide settings to keep energy high during live competitive quiz rounds."
+    },
+    "host-live-qa-sessions-events-webinars": {
+        "title": "How to Host Live Moderated Q&A Sessions for Events & Webinars",
+        "tool": "AhaSlides",
+        "category": "Presentations & Audience Engagement",
+        "headline": "Host Structured, Upvoted Audience Q&A Sessions",
+        "intro": "Managing live event questions verbally leads to crosstalk and awkward silences. This guide shows you how to capture, filter, and prioritize live audience questions digitally.",
+        "time": "6 Mins",
+        "prereqs": ["Webinar software or physical event stage display"],
+        "steps": [
+            {"title": "Add a Dedicated Q&A Slide", "desc": "In your AhaSlides workspace, select <strong>Q&A Slide</strong>. Enable question upvoting so the audience can vote for the queries they want answered most."},
+            {"title": "Configure Content Moderation Filters", "desc": "Toggle <strong>Profanity Filter</strong> and <strong>Moderate Questions</strong> in the settings tab. This allows a co-host or moderator to approve questions behind the scenes before they appear on the public screen."},
+            {"title": "Run the Live Segment & Mark Answered", "desc": "During the Q&A window, display the live question feed. As you address each query, click <strong>Mark as Answered</strong> to clear the queue and keep the stage view structured."}
+        ],
+        "tip": "Enable 'Anonymous Submissions' if your event covers sensitive business topics—it increases audience question volume by up to 3x."
+    },
+    "word-cloud-generator-audience-feedback": {
+        "title": "How to Generate Real-Time Word Clouds from Audience Input",
+        "tool": "AhaSlides",
+        "category": "Presentations & Audience Engagement",
+        "headline": "Create Dynamic Real-Time Word Clouds in Meetings",
+        "intro": "Collecting open-ended feedback from teams or audiences usually yields scattered notes. Learn how to generate live, visually striking word clouds that grow dynamically as participants submit responses.",
+        "time": "4 Mins",
+        "prereqs": ["Presenter dashboard access"],
+        "steps": [
+            {"title": "Select Word Cloud Slide Template", "desc": "Inside AhaSlides, choose <strong>Word Cloud</strong> from the slide library. Type your prompt (e.g., 'What is our biggest priority for Q3 in one word?')."},
+            {"title": "Set Response Rules & Submission Limits", "desc": "Configure maximum allowed entries per participant (e.g., 3 words max) and set a time limit (e.g., 60 seconds)."},
+            {"title": "Broadcast Live Word Visualization", "desc": "Launch the slide. As participants type words into their phones, the entries display live on screen—popular terms automatically scale larger in real-time."}
+        ],
+        "tip": "Use word clouds as icebreakers at the start of remote Zoom or Teams meetings to boost participant engagement before deep-dive topics."
+    },
+    "spinner-wheel-random-name-picker-events": {
+        "title": "How to Set Up a Live Spinner Wheel for Giveaways & Name Picking",
+        "tool": "AhaSlides",
+        "category": "Presentations & Audience Engagement",
+        "headline": "Add Gamification with Custom Interactive Spinner Wheels",
+        "intro": "Adding gamification to webinars, classrooms, or team meetings boosts retention. Here is how to create a custom interactive spinner wheel for prize draws and random participant selection.",
+        "time": "4 Mins",
+        "prereqs": ["List of participant names or prize items"],
+        "steps": [
+            {"title": "Add Spinner Wheel Slide", "desc": "In AhaSlides, select <strong>Spinner Wheel</strong>. Paste your list of entries (names, team names, or prize awards) into the text input box."},
+            {"title": "Customize Wheel Sound Effects & Animation Speed", "desc": "Select your color theme, spin duration (e.g., 5 seconds), and toggle celebratory confetti animations upon landing."},
+            {"title": "Spin Live & Remove Winning Entries", "desc": "Click <strong>Spin</strong> during your presentation. Once a winning entry lands, click <strong>Remove Entry</strong> so names are not picked twice in subsequent rounds."}
+        ],
+        "tip": "Pre-load attendee rosters into the wheel before launching a meeting to instantly pick random presenters without bias."
+    },
+
+    # --- UPTIMEROBOT GUIDES ---
+    "monitor-website-downtime-alerts": {
+        "title": "How to Set Up Automated Website Downtime Monitoring & Alerts",
+        "tool": "UptimeRobot",
+        "category": "Uptime & Server Monitoring",
+        "headline": "Detect Server Downtime Instantly via SMS, Email, or Slack",
+        "intro": "When your website or API crashes, every offline minute costs money and damages brand trust. Learn how to monitor server availability 24/7 with instant incident notifications.",
+        "time": "5 Mins",
+        "prereqs": ["Target website URL or server IP address"],
+        "steps": [
+            {"title": "Create HTTP(s) Monitor", "desc": "Sign in to UptimeRobot and click <strong>Add New Monitor</strong>. Select monitor type <strong>HTTP(s)</strong> and enter your target URL (e.g., https://yourwebsite.com)."},
+            {"title": "Configure Check Intervals & Timeout Rules", "desc": "Set your monitoring check frequency (e.g., every 60 seconds) and configure HTTP status code expectations (200 OK)."},
+            {"title": "Add Notification Integration Channels", "desc": "Choose where alerts send when downtime occurs: Email, SMS, Slack channel, Microsoft Teams webhook, or Push notification."}
+        ],
+        "tip": "Set up a secondary alert contact so key team members get notified if primary engineers don't acknowledge the incident within 5 minutes."
+    },
+    "status-page-setup-incident-communication": {
+        "title": "How to Build a Public Status Page for Incident Communication",
+        "tool": "UptimeRobot",
+        "category": "Uptime & Server Monitoring",
+        "headline": "Create Transparent Public Status Pages for Customers",
+        "intro": "During outages, support inboxes get flooded with ticket inquiries. Here is how to set up a clean public status page that communicates real-time system health transparently.",
+        "time": "6 Mins",
+        "prereqs": ["Active UptimeRobot monitors", "Custom CNAME domain record (optional)"],
+        "steps": [
+            {"title": "Initialize Public Status Page", "desc": "In UptimeRobot, navigate to <strong>Status Pages &rarr; Add Status Page</strong>. Name your page (e.g., 'Acme Corp System Status')."},
+            {"title": "Select Services to Display", "desc": "Check the boxes for the specific website, API, or database monitors you want visible on the public dashboard."},
+            {"title": "Custom Domain Mapping & Branding", "desc": "Upload your corporate logo, set custom CSS colors, and add a CNAME record (e.g., status.yourcompany.com) for professional white-labeling."}
+        ],
+        "tip": "Link your status page URL directly in your app's footer and support portal to reduce support tickets during unexpected outages."
+    },
+    "ssl-certificate-expiry-monitoring-alerts": {
+        "title": "How to Monitor SSL Certificate Expiry & Prevent Security Warnings",
+        "tool": "UptimeRobot",
+        "category": "Uptime & Server Monitoring",
+        "headline": "Prevent Broken SSL Certificates with Automated Expiry Reminders",
+        "intro": "Expired SSL certificates display terrifying 'Your connection is not private' browser warnings that scare away visitors. Learn how to automate SSL expiry tracking.",
+        "time": "4 Mins",
+        "prereqs": ["HTTPS enabled domain name"],
+        "steps": [
+            {"title": "Enable SSL Monitoring on Active Monitors", "desc": "In your UptimeRobot dashboard, edit your existing HTTP(s) monitor and check the box for <strong>SSL Certificate Monitoring</strong>."},
+            {"title": "Set Expiry Warning Thresholds", "desc": "Configure advance notification thresholds (e.g., alert 30 days, 14 days, and 7 days prior to SSL expiration)."},
+            {"title": "Track SSL Chain Health & Protocol Compliance", "desc": "Review SSL diagnostic details including certificate authority, cipher suites, and revocation status."}
+        ],
+        "tip": "Even if you use auto-renewing certificates like Let's Encrypt, server cron job failures can block renewals. This monitor acts as your ultimate safety net."
+    },
+    "ping-cron-job-heartbeat-monitoring": {
+        "title": "How to Monitor Background Cron Jobs & Database Heartbeats",
+        "tool": "UptimeRobot",
+        "category": "Uptime & Server Monitoring",
+        "headline": "Ensure Silent Background Jobs Run Successfully",
+        "intro": "Background tasks like night backups, database syncs, or email queues fail silently without throwing web errors. Learn how to monitor scheduled cron jobs with Heartbeat pings.",
+        "time": "5 Mins",
+        "prereqs": ["Access to server crontab or scheduled task script"],
+        "steps": [
+            {"title": "Create a Heartbeat Monitor Endpoint", "desc": "In UptimeRobot, select monitor type <strong>Heartbeat</strong>. Name your monitor (e.g., 'Daily Database Backup Cron')."},
+            {"title": "Set Expected Execution Intervals", "desc": "Specify how frequently the job runs (e.g., every 24 hours) plus an allowed grace period (e.g., 15 minutes)."},
+            {"title": "Attach Ping URL to Server Script", "desc": "Copy the generated unique HTTP ping URL. Append a `curl` command at the end of your server script so it pings UptimeRobot upon successful completion."}
+        ],
+        "tip": "If UptimeRobot does not receive a ping within the specified timeframe, it assumes the cron job failed or hung and alerts your team immediately."
+    },
+
     # --- JOIIN GUIDES ---
     "consolidate-xero-quickbooks": {
         "title": "How to Consolidate Multiple Xero & QuickBooks Accounts",
@@ -26,7 +149,8 @@ TOPIC_CONFIGS = {
             {"title": "Connect Your Accounting Platforms", "desc": "Sign in to Joiin, navigate to <strong>Companies &rarr; Add Company</strong>, and select Xero, QuickBooks Online, or Sage. Complete single sign-on authorization for each entity."},
             {"title": "Configure Group Business Entities", "desc": "Access the <strong>Companies</strong> dashboard tab and select the checkbox next to each subsidiary or franchise entity to include in combined financial statements."},
             {"title": "Generate & Export Consolidated Statements", "desc": "Navigate to <strong>Reports &rarr; Profit & Loss</strong>. Review side-by-side totals across entities and export a presentation-ready board pack PDF."}
-        ]
+        ],
+        "tip": "Create custom Chart of Accounts mapping rules to align non-identical GL account numbers across different subsidiary files automatically."
     },
     "multi-currency-financial-reporting": {
         "title": "Multi-Currency Financial Consolidation Setup Guide",
@@ -39,7 +163,8 @@ TOPIC_CONFIGS = {
         "steps": [
             {"title": "Select Master Base Currency", "desc": "Open <strong>Workspace Settings</strong> in Joiin and choose your primary target presentation currency (e.g., USD or EUR). All group total columns compile in this currency."},
             {"title": "Automatic Daily FX Rate Synchronization", "desc": "Joiin automatically fetches daily exchange rates from central bank feeds. P&L line items translate using monthly average rates, while Balance Sheet items apply spot closing rates."}
-        ]
+        ],
+        "tip": "You can manually override automated exchange rates for specific month-end closing dates if required by internal auditors."
     },
     "intercompany-eliminations-guide": {
         "title": "Automating Intercompany Balance & Loan Eliminations",
@@ -52,7 +177,8 @@ TOPIC_CONFIGS = {
         "steps": [
             {"title": "Tag Intercompany GL Accounts", "desc": "In the Joiin dashboard, navigate to <strong>Eliminations</strong> and select the general ledger accounts used for internal management fees or intercompany loans."},
             {"title": "Apply One-Click Elimination Rules", "desc": "Toggle the <strong>Apply Eliminations</strong> filter on your Profit & Loss or Balance Sheet to deduct internal trading amounts from your grand totals."}
-        ]
+        ],
+        "tip": "Joiin flags unposted or asymmetrical intercompany invoices automatically so you can reconcile mismatches before finalizing board packs."
     },
     "automated-board-packs-and-kpi-reports": {
         "title": "How to Build Branded Executive Board Packs in Minutes",
@@ -65,7 +191,8 @@ TOPIC_CONFIGS = {
         "steps": [
             {"title": "Upload Brand Style Assets", "desc": "Navigate to <strong>Settings &rarr; Branding</strong>. Upload your corporate logo and set custom brand hex colors for tables and headers."},
             {"title": "Compile & Export Report Pack", "desc": "Click <strong>Report Packs &rarr; Create Pack</strong>. Combine Profit & Loss statements, Balance Sheets, and visual KPI widgets into an exportable PDF package."}
-        ]
+        ],
+        "tip": "Save finished report layouts as templates to reuse them every month with one-click live data refreshes."
     },
 
     # --- GEO TARGETLY GUIDES ---
@@ -80,7 +207,8 @@ TOPIC_CONFIGS = {
         "steps": [
             {"title": "Create Location Rules", "desc": "Inside Geo Targetly, create a new <strong>Geo Redirect</strong> rule (e.g., If visitor IP matches United Kingdom, redirect to /uk-store)."},
             {"title": "Embed Script Tag", "desc": "Copy the provided JavaScript snippet and paste it into the `<head>` tag of your website HTML or tag manager."}
-        ]
+        ],
+        "tip": "Set up a 'First Visit Only' redirection rule so returning users can manually switch country versions without getting forced back."
     },
     "auto-currency-switcher-location": {
         "title": "How to Display Local Currency Based on Visitor Location",
@@ -93,7 +221,8 @@ TOPIC_CONFIGS = {
         "steps": [
             {"title": "Configure Target Currencies", "desc": "Set local target currencies (USD, EUR, GBP, CAD) based on country detection in your Geo Targetly dashboard."},
             {"title": "Activate Automatic Price Conversion", "desc": "Paste the snippet onto product pages to automatically render converted prices based on visitor IP geolocation."}
-        ]
+        ],
+        "tip": "Ensure your payment gateway supports multi-currency checkout so customers pay in the exact currency displayed."
     },
     "block-unwanted-country-traffic-website": {
         "title": "How to Block Traffic or Restrict Access by Country",
@@ -106,7 +235,8 @@ TOPIC_CONFIGS = {
         "steps": [
             {"title": "Set Blacklist Rules", "desc": "Select the specific geographic regions or countries you wish to block in the Geo Targetly control panel."},
             {"title": "Configure Restriction Response Page", "desc": "Choose whether blocked visitors see a customized access-denied message or get redirected to an external URL."}
-        ]
+        ],
+        "tip": "Whitelist search engine bot IP addresses (like Googlebot) so blocking certain countries doesn't harm your SEO index."
     },
     "location-based-popup-banners": {
         "title": "How to Show Location-Specific Popups & Banners",
@@ -119,7 +249,8 @@ TOPIC_CONFIGS = {
         "steps": [
             {"title": "Design Location Banner Widget", "desc": "Customize banner text, button links, and layout rules for target city or country demographics."},
             {"title": "Deploy Embed Code", "desc": "Add the embed script to your site; Geo Targetly automatically filters banner visibility based on visitor location."}
-        ]
+        ],
+        "tip": "Use city-level geo targeting to promote localized pop-up events or regional free shipping thresholds."
     },
 
     # --- AUDIORISTA GUIDES ---
@@ -134,7 +265,8 @@ TOPIC_CONFIGS = {
         "steps": [
             {"title": "Import Text Manuscripts or Connect RSS", "desc": "Import text articles directly into Audiorista or connect your website RSS feed for automatic syncing."},
             {"title": "Generate AI Voiceovers or Upload Audio", "desc": "Use high-fidelity AI text-to-speech engines or upload custom recorded MP3 tracks to create your audio stream."}
-        ]
+        ],
+        "tip": "Pair AI audio narration with background music beds to create a polished podcast-style listening experience."
     },
     "monetize-audiobooks-private-audio-apps": {
         "title": "How to Sell Audiobooks & Premium Podcasts on Your App",
@@ -147,7 +279,8 @@ TOPIC_CONFIGS = {
         "steps": [
             {"title": "Organize Audio Chapters & Paywall Rules", "desc": "Upload audio files, arrange content playlists, and set subscription or single-purchase pricing tiers."},
             {"title": "Connect Payment Processing", "desc": "Link your Stripe merchant account to accept direct payments across web, iOS, and Android platforms."}
-        ]
+        ],
+        "tip": "Offer a free sample chapter before triggering the paywall to boost conversion rates on paid audiobook courses."
     },
     "publish-white-label-audiobook-app": {
         "title": "How to Build a White-Label Audiobook App",
@@ -160,7 +293,8 @@ TOPIC_CONFIGS = {
         "steps": [
             {"title": "Customize App Branding Assets", "desc": "Upload app icons, splash screen artwork, and brand color palettes inside Audiorista."},
             {"title": "Submit App for Publishing", "desc": "Follow the automated wizard to submit your custom-branded app directly to the Apple App Store and Google Play Store."}
-        ]
+        ],
+        "tip": "Enable offline download modes so your users can listen to audio content during flights or commutes."
     },
     "branded-audio-app-for-creators": {
         "title": "Branded Audio Platform Setup Guide for Creators",
@@ -173,7 +307,8 @@ TOPIC_CONFIGS = {
         "steps": [
             {"title": "Configure Subscriber Audio Portal", "desc": "Build exclusive audio playlists and configure access permissions inside Audiorista."},
             {"title": "Distribute Member Invites", "desc": "Share private streaming access links or embed web players into your membership site."}
-        ]
+        ],
+        "tip": "Use push notifications inside your branded app to notify listeners instantly when a new episode drops."
     },
 
     # --- EMAILLISTVERIFY GUIDES ---
@@ -188,7 +323,8 @@ TOPIC_CONFIGS = {
         "steps": [
             {"title": "Upload Email List CSV", "desc": "Sign in to EmailListVerify and click <strong>Verify List &rarr; Upload File</strong>. Select your CSV or TXT file."},
             {"title": "Download Cleaned Contact File", "desc": "The verification engine automatically checks MX records, syntax, and invalid mailboxes. Export the filtered list of 100% valid addresses."}
-        ]
+        ],
+        "tip": "Scrub any contact list that hasn't been emailed in over 60 days to purge abandoned or deactivated corporate mailboxes."
     },
     "clean-spam-traps-email-marketing": {
         "title": "How to Identify & Remove Spam Traps from Email Lists",
@@ -201,7 +337,8 @@ TOPIC_CONFIGS = {
         "steps": [
             {"title": "Run Spam Trap Verification Engine", "desc": "Import your subscriber list into EmailListVerify's automated detection engine."},
             {"title": "Review Risk Classifications", "desc": "Filter out flagged records classified as spam traps, disposable emails, or catch-all accounts before launching your campaign."}
-        ]
+        ],
+        "tip": "Never buy unverified cold email lists—always run them through a syntax and MX record verification layer first."
     },
     "real-time-api-email-verification-forms": {
         "title": "How to Validate Email Addresses on Website Forms in Real-Time",
@@ -214,7 +351,8 @@ TOPIC_CONFIGS = {
         "steps": [
             {"title": "Generate Real-Time API Key", "desc": "Navigate to <strong>API Settings</strong> in EmailListVerify and generate a dedicated verification API key."},
             {"title": "Connect Web Form Endpoint", "desc": "Paste the JavaScript validation code into your sign-up form to trigger immediate background validation before submission."}
-        ]
+        ],
+        "tip": "Prompt users with 'Did you mean @gmail.com?' when a typo like @gmai.com is detected on your forms."
     },
     "prevent-domain-blacklisting-deliverability": {
         "title": "How to Prevent Email Domain Blacklisting & Fix MX Records",
@@ -227,7 +365,8 @@ TOPIC_CONFIGS = {
         "steps": [
             {"title": "Run Domain & MX Health Audit", "desc": "Enter your sending domain into EmailListVerify's blacklist scanner tool."},
             {"title": "Review Blacklist Status", "desc": "Identify if your IP or domain is listed on global DNS blacklists and execute automated delisting resolution steps."}
-        ]
+        ],
+        "tip": "Keep your bounce rate strictly below 2% to ensure major ISPs like Google and Microsoft don't flag your domain."
     },
 
     # --- ICOMPASS GUIDES ---
@@ -242,7 +381,8 @@ TOPIC_CONFIGS = {
         "steps": [
             {"title": "Set Up Team Workspace Directory", "desc": "Log in to iCompass and create team project boards grouped by department or client initiative."},
             {"title": "Assign Directives & Track Milestones", "desc": "Assign individual tasks, attach documentation, and enable real-time status notifications for team members."}
-        ]
+        ],
+        "tip": "Set up automated weekly email summaries so executives get progress updates without holding status meetings."
     },
     "time-zone-tracking-distributed-teams": {
         "title": "How to Coordinate Cross-Border Teams Across Time Zones",
@@ -255,7 +395,8 @@ TOPIC_CONFIGS = {
         "steps": [
             {"title": "Configure Global User Time Zones", "desc": "Set local time zones for each team member profile inside your iCompass unified directory."},
             {"title": "Coordinate Asynchronous Workflows", "desc": "Utilize time-zone tracking calendars to schedule meeting windows and asynchronous task handoffs."}
-        ]
+        ],
+        "tip": "Rely on recorded video updates attached to iCompass tasks instead of forcing early or late meeting times."
     },
     "secure-document-sharing-remote-portal": {
         "title": "How to Set Up a Secure Portal for Remote Document Sharing",
@@ -268,7 +409,8 @@ TOPIC_CONFIGS = {
         "steps": [
             {"title": "Create Secure Knowledge Base Folders", "desc": "Navigate to the <strong>Portal Software</strong> module and create password-protected document repositories."},
             {"title": "Set SSL Granular Permissions", "desc": "Assign role-based access rights (View, Edit, Admin) to ensure team members only access authorized files."}
-        ]
+        ],
+        "tip": "Enable auto-expiring document download links when sharing confidential files with external vendors."
     },
     "employee-activity-performance-monitoring": {
         "title": "How to Monitor Remote Staff Productivity & Time Allocation",
@@ -281,7 +423,8 @@ TOPIC_CONFIGS = {
         "steps": [
             {"title": "Enable Time Tracking & Activity Logging", "desc": "Activate the <strong>Employee Activity Monitoring</strong> feature inside iCompass for active project assignments."},
             {"title": "Analyze Utilization Metrics", "desc": "Generate real-time activity reports to review resource allocation, completed tasks, and operational efficiency."}
-        ]
+        ],
+        "tip": "Review weekly time distribution reports to identify overloaded staff members before burnout occurs."
     },
 
     # --- WARMUP INBOX GUIDES ---
@@ -296,7 +439,8 @@ TOPIC_CONFIGS = {
         "steps": [
             {"title": "Connect Mailbox via SMTP/IMAP", "desc": "Sign in to Warmup Inbox, click <strong>Add Inbox</strong>, and authenticate your Google Workspace, Outlook, or SMTP account."},
             {"title": "Enable Automated Engagement Network", "desc": "Warmup Inbox connects your account to 30,000+ real inboxes that exchange, open, reply, and rescue your messages from spam automatically."}
-        ]
+        ],
+        "tip": "Keep your warmup running in the background even after launching active campaigns to maintain positive engagement signals."
     },
     "fix-cold-emails-going-to-spam": {
         "title": "How to Fix Cold Emails Going to Spam & Improve Placement",
@@ -309,7 +453,8 @@ TOPIC_CONFIGS = {
         "steps": [
             {"title": "Run Deliverability & DNS Audit", "desc": "Check your inbox health score inside Warmup Inbox to review SPF, DKIM, and DMARC record status."},
             {"title": "Increase Spam Rescue Activity", "desc": "Set your daily warmup volume to automatically move landed emails out of spam folders and rebuild domain trust."}
-        ]
+        ],
+        "tip": "Pause outbound sales sending for 5 days while keeping Warmup Inbox running at max volume if health drops below 70%."
     },
     "blacklist-monitoring-auto-delisting": {
         "title": "How to Set Up Daily Blacklist Monitoring & Auto-Delisting",
@@ -322,7 +467,8 @@ TOPIC_CONFIGS = {
         "steps": [
             {"title": "Activate Daily Blacklist Scanner", "desc": "Warmup Inbox automatically scans your sending domain against 100+ global DNS blacklists daily."},
             {"title": "Trigger Automated Delisting Protocols", "desc": "If a listing occurs, follow automated delisting workflows inside the dashboard to clear your domain status."}
-        ]
+        ],
+        "tip": "Set up instant SMS alerts for blacklist hits so you can halt automated campaigns before further damage occurs."
     },
     "language-specific-email-warmup-guide": {
         "title": "How to Run Language-Specific Email Warmup for Global Outreach",
@@ -335,7 +481,8 @@ TOPIC_CONFIGS = {
         "steps": [
             {"title": "Select Target Campaign Language", "desc": "Inside inbox settings, choose your primary target language (e.g., German, French, Spanish)."},
             {"title": "Run Contextual Warmup Peer Conversations", "desc": "The network generates natural, language-specific email exchanges to establish local ISP sender credibility."}
-        ]
+        ],
+        "tip": "Align your warmup language precisely with the language used in your primary outbound sales scripts."
     },
 
     # --- WOODPECKER GUIDES ---
@@ -351,7 +498,8 @@ TOPIC_CONFIGS = {
             {"title": "Connect Outbound Mailbox", "desc": "Sign in to Woodpecker and link your email account with built-in deliverability monitoring."},
             {"title": "Build Multi-Step Sequence & Condition Triggers", "desc": "Write your initial cold email and set conditional follow-ups (e.g., If no reply after 3 days, send Follow-up B)."},
             {"title": "Import Prospects & Launch", "desc": "Upload your verified lead list and click <strong>Start Campaign</strong> to begin human-like adaptive sending."}
-        ]
+        ],
+        "tip": "Use snippet tags like {{FIRST_NAME}} and {{COMPANY}} to personalize every email and increase response rates."
     },
     "linkedin-cold-outreach-automation-guide": {
         "title": "How to Automate LinkedIn & Email Multichannel Outreach",
@@ -364,7 +512,8 @@ TOPIC_CONFIGS = {
         "steps": [
             {"title": "Connect LinkedIn Integration", "desc": "Link your LinkedIn account inside Woodpecker's campaign workflow console."},
             {"title": "Add LinkedIn Action Steps to Sequence", "desc": "Insert automated LinkedIn profile visits, connection invites, and direct messages alongside your email steps."}
-        ]
+        ],
+        "tip": "Visit a prospect's LinkedIn profile 1 day before sending a cold email to increase name recognition when your message hits their inbox."
     },
     "inbox-rotation-deliverability-cold-email": {
         "title": "How to Set Up Inbox Rotation to Scale Outbound Email",
@@ -377,7 +526,8 @@ TOPIC_CONFIGS = {
         "steps": [
             {"title": "Add Sending Accounts to Rotation Pool", "desc": "In Woodpecker, connect multiple sending domains to your organization account."},
             {"title": "Enable Campaign Inbox Rotation", "desc": "Assign the inbox pool to your active campaign. Woodpecker automatically distributes sending volume evenly across all accounts."}
-        ]
+        ],
+        "tip": "Limit daily sending volume to 50 emails per inbox to keep account reputation pristine."
     },
     "b2b-prospect-lead-database-outreach": {
         "title": "How to Find & Export B2B Leads for Cold Email Campaigns",
@@ -390,11 +540,11 @@ TOPIC_CONFIGS = {
         "steps": [
             {"title": "Search B2B Lead Finder", "desc": "Use Woodpecker's B2B Lead Finder tool to filter contacts by industry, job title, company size, and location."},
             {"title": "Export Verified Leads to Campaign", "desc": "Select target contacts and import them directly into your active cold email campaign with built-in verification."}
-        ]
+        ],
+        "tip": "Filter by job title changes in the last 90 days to target newly hired executives eager to implement new tools."
     }
 }
 
-# Dictionary to organize items by Software Vendor
 tools_dict = {}
 
 for key, link in links.items():
@@ -412,7 +562,8 @@ for key, link in links.items():
         "steps": [
             {"title": "Initialize Configuration", "desc": "Log in to the administration portal and configure settings."},
             {"title": "Verify Deployment Status", "desc": "Run integration diagnostics to confirm live operation."}
-        ]
+        ],
+        "tip": "Double-check your credentials before publishing live setups."
     })
     
     prereqs_html = "".join([f"<li>{p}</li>" for p in cfg.get('prereqs', ["Admin account access"])])
@@ -570,6 +721,15 @@ for key, link in links.items():
       color: var(--slate-600);
       font-size: 1.02rem;
     }}
+    .tip-box {{
+      background: #fefce8;
+      border: 1px solid #fef08a;
+      border-radius: 8px;
+      padding: 18px 22px;
+      margin-top: 30px;
+      font-size: 0.95rem;
+      color: #713f12;
+    }}
     .cta-banner {{
       background: var(--slate-900);
       color: white;
@@ -636,6 +796,10 @@ for key, link in links.items():
 
   {steps_html}
 
+  <div class="tip-box">
+    💡 <strong>Pro-Tip & Best Practice:</strong> {cfg.get('tip', 'Follow vendor configuration best practices to ensure continuous uptime and deliverability.')}
+  </div>
+
   <div class="cta-banner">
     <h2>Ready to implement {cfg['tool']}?</h2>
     <p>Access official portal tools and initialize your workspace in minutes.</p>
@@ -660,7 +824,6 @@ for key, link in links.items():
         'category': cfg.get('category', 'SaaS Manuals')
     })
 
-# Build Sectioned Layout for Homepage
 sections_html = ""
 for tool, manuals in tools_dict.items():
     cards_in_section = ""
@@ -678,7 +841,7 @@ for tool, manuals in tools_dict.items():
     sections_html += f"""
     <div class="tool-section" data-section-tool="{tool.lower()}">
       <div class="tool-header">
-        <h2>🔧 {tool} Documentation & Manuals</h2>
+        <h2>🔧 {tool} Manuals</h2>
         <span class="tool-count">{len(manuals)} Guides</span>
       </div>
       <div class="grid">
@@ -821,12 +984,12 @@ index_html = f"""<!DOCTYPE html>
     <p class="subtitle">Searchable step-by-step technical guides, integration manuals, and SaaS tutorials.</p>
 
     <div class="search-box-wrapper">
-      <input type="text" id="manualSearch" class="search-input" placeholder="🔍 Search guides (e.g., 'Xero', 'email', 'redirect')..." onkeyup="filterManuals()">
+      <input type="text" id="manualSearch" class="search-input" placeholder="🔍 Search guides (e.g., 'Xero', 'downtime', 'polls', 'email')..." onkeyup="filterManuals()">
     </div>
   </div>
 
   <div id="noResults" class="no-results">
-    No guides found matching your search. Try searching for "Email", "Joiin", or "Outreach".
+    No guides found matching your search. Try searching for "Email", "Polls", or "Downtime".
   </div>
 
   <div id="sectionsContainer">
@@ -852,7 +1015,6 @@ index_html = f"""<!DOCTYPE html>
         }}
       }});
 
-      // Hide sections with no matching visible cards
       sections.forEach(section => {{
         const visibleCardsInSection = section.querySelectorAll('.manual-card[style*="display: flex"]');
         if (visibleCardsInSection.length === 0 && query !== '') {{
