@@ -1,18 +1,23 @@
 import json
 import os
-from google import genai
+import sys
+import time
 
-# Read API Key explicitly
 api_key = os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY")
 if not api_key:
-    print("Error: GEMINI_API_KEY environment variable is missing.")
-    exit(1)
+    print("CRITICAL ERROR: GEMINI_API_KEY secret is missing!")
+    sys.exit(1)
 
-client = genai.Client(api_key=api_key)
+try:
+    from google import genai
+    client = genai.Client(api_key=api_key)
+except Exception as e:
+    print(f"Error initializing GenAI client: {e}")
+    sys.exit(1)
 
 if not os.path.exists('links.json'):
     print("No links.json found.")
-    exit(0)
+    sys.exit(0)
 
 with open('links.json', 'r') as f:
     links = json.load(f)
@@ -27,10 +32,24 @@ for key, link in links.items():
     
     prompt = f"Create a clean, complete HTML webpage for {title}. Target audience: CFOs and accountants. Affiliate link: {link}. Include inline CSS styles. Return ONLY valid HTML code without markdown code blocks."
 
-    response = client.models.generate_content(
-        model='gemini-2.0-flash',
-        contents=prompt
-    )
+    response = None
+    for model_name in ['gemini-2.5-flash', 'gemini-1.5-flash']:
+        try:
+            print(f"Generating page for {title} using {model_name}...")
+            response = client.models.generate_content(
+                model=model_name,
+                contents=prompt
+            )
+            if response and response.text:
+                print(f"Successfully generated {filename}!")
+                break
+        except Exception as err:
+            print(f"Model {model_name} failed: {err}")
+            time.sleep(10)  # Wait if rate limited
+
+    if not response or not response.text:
+        print(f"ERROR: Could not generate content for {title}.")
+        sys.exit(1)
 
     html_content = response.text.strip()
     if html_content.startswith("```html"):
@@ -44,6 +63,7 @@ for key, link in links.items():
         f.write(html_content.strip())
 
     generated_guides.append({'slug': filename, 'title': title})
+    time.sleep(5)  # 5-second pause to prevent 429 rate limit errors
 
 cards_html = ""
 for item in generated_guides:
