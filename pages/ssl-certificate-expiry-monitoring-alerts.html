@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How to Set Up Ssl Certificate Expiry Monitoring Alerts - Stack Manuals</title>
+  <title>How to Monitor SSL Certificate Expiry & Prevent Security Warnings - Stack Manuals</title>
   <style>
     :root {
       --primary: #0070f3;
@@ -139,6 +139,15 @@
       color: var(--slate-600);
       font-size: 1.02rem;
     }
+    .tip-box {
+      background: #fefce8;
+      border: 1px solid #fef08a;
+      border-radius: 8px;
+      padding: 18px 22px;
+      margin-top: 30px;
+      font-size: 0.95rem;
+      color: #713f12;
+    }
     .cta-banner {
       background: var(--slate-900);
       color: white;
@@ -186,18 +195,18 @@
     <span class="status-badge">✓ Updated 2026</span>
   </div>
   
-  <h1>Integration Guide for Ssl Certificate Expiry Monitoring Alerts</h1>
-  <p class="intro">Follow this step-by-step technical implementation manual.</p>
+  <h1>Prevent Broken SSL Certificates with Automated Expiry Reminders</h1>
+  <p class="intro">Expired SSL certificates display terrifying 'Your connection is not private' browser warnings that scare away visitors. Learn how to automate SSL expiry tracking.</p>
 
   <div class="meta-card">
-    <div>⏱️ Estimated Setup Time: 5 Mins</div>
-    <div>⚡ Target Platform: Official Portal</div>
+    <div>⏱️ Estimated Setup Time: 4 Mins</div>
+    <div>⚡ Target Platform: UptimeRobot</div>
   </div>
 
   <div class="prereq-box">
     <h3>Prerequisites & System Requirements</h3>
     <ul>
-      <li>Admin access to platform dashboard</li>
+      <li>HTTPS enabled domain name</li>
     </ul>
   </div>
 
@@ -207,24 +216,36 @@
         <div class="step-card">
           <div class="step-header">
             <span class="step-number">1</span>
-            <h2 class="step-title">Initialize Configuration</h2>
+            <h2 class="step-title">Enable SSL Monitoring on Active Monitors</h2>
           </div>
-          <p class="step-desc">Log in to the administration portal and configure settings.</p>
+          <p class="step-desc">In your UptimeRobot dashboard, edit your existing HTTP(s) monitor and check the box for <strong>SSL Certificate Monitoring</strong>.</p>
         </div>
         
         <div class="step-card">
           <div class="step-header">
             <span class="step-number">2</span>
-            <h2 class="step-title">Verify Deployment Status</h2>
+            <h2 class="step-title">Set Expiry Warning Thresholds</h2>
           </div>
-          <p class="step-desc">Run integration diagnostics to confirm live operation.</p>
+          <p class="step-desc">Configure advance notification thresholds (e.g., alert 30 days, 14 days, and 7 days prior to SSL expiration).</p>
+        </div>
+        
+        <div class="step-card">
+          <div class="step-header">
+            <span class="step-number">3</span>
+            <h2 class="step-title">Track SSL Chain Health & Protocol Compliance</h2>
+          </div>
+          <p class="step-desc">Review SSL diagnostic details including certificate authority, cipher suites, and revocation status.</p>
         </div>
         
 
+  <div class="tip-box">
+    💡 <strong>Pro-Tip & Best Practice:</strong> Even if you use auto-renewing certificates like Let's Encrypt, server cron job failures can block renewals. This monitor acts as your ultimate safety net.
+  </div>
+
   <div class="cta-banner">
-    <h2>Ready to implement Official Portal?</h2>
+    <h2>Ready to implement UptimeRobot?</h2>
     <p>Access official portal tools and initialize your workspace in minutes.</p>
-    <a href="https://uptimerobot.com/?red=stackm" class="btn" target="_blank" rel="noopener">Launch Official Portal Portal &rarr;</a>
+    <a href="https://uptimerobot.com/?red=stackm" class="btn" target="_blank" rel="noopener">Launch UptimeRobot Portal &rarr;</a>
   </div>
 
   <a href="/" class="back-link">&larr; Back to Stack Manuals Index</a>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How to Set Up Status Page Setup Incident Communication - Stack Manuals</title>
+  <title>How to Build a Public Status Page for Incident Communication - Stack Manuals</title>
   <style>
     :root {
       --primary: #0070f3;
@@ -139,6 +139,15 @@
       color: var(--slate-600);
       font-size: 1.02rem;
     }
+    .tip-box {
+      background: #fefce8;
+      border: 1px solid #fef08a;
+      border-radius: 8px;
+      padding: 18px 22px;
+      margin-top: 30px;
+      font-size: 0.95rem;
+      color: #713f12;
+    }
     .cta-banner {
       background: var(--slate-900);
       color: white;
@@ -186,18 +195,18 @@
     <span class="status-badge">✓ Updated 2026</span>
   </div>
   
-  <h1>Integration Guide for Status Page Setup Incident Communication</h1>
-  <p class="intro">Follow this step-by-step technical implementation manual.</p>
+  <h1>Create Transparent Public Status Pages for Customers</h1>
+  <p class="intro">During outages, support inboxes get flooded with ticket inquiries. Here is how to set up a clean public status page that communicates real-time system health transparently.</p>
 
   <div class="meta-card">
-    <div>⏱️ Estimated Setup Time: 5 Mins</div>
-    <div>⚡ Target Platform: Official Portal</div>
+    <div>⏱️ Estimated Setup Time: 6 Mins</div>
+    <div>⚡ Target Platform: UptimeRobot</div>
   </div>
 
   <div class="prereq-box">
     <h3>Prerequisites & System Requirements</h3>
     <ul>
-      <li>Admin access to platform dashboard</li>
+      <li>Active UptimeRobot monitors</li><li>Custom CNAME domain record (optional)</li>
     </ul>
   </div>
 
@@ -207,24 +216,36 @@
         <div class="step-card">
           <div class="step-header">
             <span class="step-number">1</span>
-            <h2 class="step-title">Initialize Configuration</h2>
+            <h2 class="step-title">Initialize Public Status Page</h2>
           </div>
-          <p class="step-desc">Log in to the administration portal and configure settings.</p>
+          <p class="step-desc">In UptimeRobot, navigate to <strong>Status Pages &rarr; Add Status Page</strong>. Name your page (e.g., 'Acme Corp System Status').</p>
         </div>
         
         <div class="step-card">
           <div class="step-header">
             <span class="step-number">2</span>
-            <h2 class="step-title">Verify Deployment Status</h2>
+            <h2 class="step-title">Select Services to Display</h2>
           </div>
-          <p class="step-desc">Run integration diagnostics to confirm live operation.</p>
+          <p class="step-desc">Check the boxes for the specific website, API, or database monitors you want visible on the public dashboard.</p>
+        </div>
+        
+        <div class="step-card">
+          <div class="step-header">
+            <span class="step-number">3</span>
+            <h2 class="step-title">Custom Domain Mapping & Branding</h2>
+          </div>
+          <p class="step-desc">Upload your corporate logo, set custom CSS colors, and add a CNAME record (e.g., status.yourcompany.com) for professional white-labeling.</p>
         </div>
         
 
+  <div class="tip-box">
+    💡 <strong>Pro-Tip & Best Practice:</strong> Link your status page URL directly in your app's footer and support portal to reduce support tickets during unexpected outages.
+  </div>
+
   <div class="cta-banner">
-    <h2>Ready to implement Official Portal?</h2>
+    <h2>Ready to implement UptimeRobot?</h2>
     <p>Access official portal tools and initialize your workspace in minutes.</p>
-    <a href="https://uptimerobot.com/?red=stackm" class="btn" target="_blank" rel="noopener">Launch Official Portal Portal &rarr;</a>
+    <a href="https://uptimerobot.com/?red=stackm" class="btn" target="_blank" rel="noopener">Launch UptimeRobot Portal &rarr;</a>
   </div>
 
   <a href="/" class="back-link">&larr; Back to Stack Manuals Index</a>
