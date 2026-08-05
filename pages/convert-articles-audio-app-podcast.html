@@ -3,62 +3,72 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How to Set Up Convert Articles Audio App Podcast with Joiin</title>
-  <meta name="description" content="Step-by-step technical guide for configuring Convert Articles Audio App Podcast for group reporting.">
+  <title>How to Turn Written Articles & Content into Audio Apps</title>
   <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      max-width: 850px;
-      margin: 40px auto;
-      padding: 0 20px;
-      line-height: 1.6;
-      color: #1f2937;
-    }
-    .badge { display: inline-block; background: #e0f2fe; color: #0369a1; padding: 4px 12px; border-radius: 9999px; font-weight: 600; font-size: 0.875rem; }
-    h1 { font-size: 2.1rem; color: #111827; margin-top: 10px; }
-    h2 { font-size: 1.4rem; color: #1f2937; border-bottom: 2px solid #f3f4f6; padding-bottom: 8px; margin-top: 35px; }
-    .meta-box { background: #f9fafb; border-left: 4px solid #0070f3; padding: 16px; margin: 20px 0; border-radius: 0 8px 8px 0; }
-    .step-number { display: inline-block; background: #0070f3; color: white; border-radius: 50%; width: 28px; height: 28px; text-align: center; line-height: 28px; font-weight: bold; margin-right: 8px; }
-    .img-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; margin: 20px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.04); }
-    .img-card img { width: 100%; height: auto; display: block; }
-    .img-card p { padding: 10px 14px; font-size: 0.875rem; color: #64748b; margin: 0; background: #f8fafc; text-align: center; border-top: 1px solid #f1f5f9; }
-    .cta-box { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 12px; padding: 28px; margin: 40px 0; text-align: center; }
-    .btn { display: inline-block; background: #0070f3; color: white; text-decoration: none; padding: 14px 28px; border-radius: 8px; font-weight: bold; font-size: 1.1rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
-    .btn:hover { background: #0051a2; }
+    :root { --primary: #0070f3; --border: #e2e8f0; }
+    * { box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 850px; margin: 0 auto; padding: 30px 20px; color: #0f172a; background: #f8fafc; line-height: 1.6; }
+    .container { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 35px; box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
+    .badge { display: inline-block; background: #e0f2fe; color: #0369a1; padding: 4px 12px; border-radius: 999px; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; }
+    h1 { font-size: 2rem; margin: 15px 0; color: #0f172a; }
+    .intro { font-size: 1.1rem; color: #475569; margin-bottom: 25px; }
+    .pills { display: flex; gap: 15px; background: #f1f5f9; padding: 12px 18px; border-radius: 8px; font-weight: 600; font-size: 0.9rem; margin-bottom: 30px; }
+    .step-card { border: 1px solid var(--border); border-radius: 8px; padding: 24px; margin-bottom: 25px; background: white; }
+    .step-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+    .step-badge { background: var(--primary); color: white; padding: 4px 8px; border-radius: 4px; font-weight: 800; font-size: 0.75rem; }
+    .step-title { font-size: 1.3rem; margin: 0; }
+    .img-container { border: 1px solid var(--border); border-radius: 6px; overflow: hidden; margin-top: 15px; }
+    .img-container img { width: 100%; display: block; }
+    .img-caption { background: #f8fafc; padding: 8px; text-align: center; font-size: 0.85rem; color: #64748b; border-top: 1px solid var(--border); }
+    .cta { background: #0f172a; color: white; border-radius: 10px; padding: 30px; text-align: center; margin-top: 35px; }
+    .cta h2 { color: white; margin-top: 0; }
+    .btn { display: inline-block; background: var(--primary); color: white; text-decoration: none; padding: 14px 28px; border-radius: 6px; font-weight: bold; font-size: 1.1rem; margin-top: 15px; }
   </style>
 </head>
 <body>
+<div class="container">
+  <span class="badge">Technical Setup Manual</span>
+  <h1>Convert Blog Posts & Text into Custom Audio Streams</h1>
+  <p class="intro">Publishers and creators can easily turn written content into high-quality audio feeds, private podcasts, and branded mobile apps.</p>
 
-  <span class="badge">Technical Guide & Integration Manual</span>
-  <h1>How to Set Up Convert Articles Audio App Podcast with Joiin</h1>
-
-  <div class="meta-box">
-    <strong>Overview:</strong> Step-by-step technical guide for configuring Convert Articles Audio App Podcast for group reporting.
+  <div class="pills">
+    <div>⏱️ Estimated Time: 6 Mins</div>
+    <div>⚡ Target Software: Audiorista</div>
   </div>
 
-  <h2>Step 1: Initialize Platform Connection</h2>
-  <p>Connect your accounting entities to Joiin using official API integrations.</p>
+  
+        <div class="step-card">
+          <div class="step-header">
+            <span class="step-badge">STEP 1</span>
+            <h2 class="step-title">Upload Text or Connect RSS Feed</h2>
+          </div>
+          <p class="step-text">Import your blog posts or text manuscripts into Audiorista.</p>
+          <div class="img-container">
+            <img src="https://images.ctfassets.net/3pr2433ts8v0/40wV3i9mZJzK2406kR36wE/2387140bdfadcf4ec163a8a81eb82d37/Joiin_Dashboard_Preview.png" alt="Upload Text or Connect RSS Feed screenshot" loading="lazy">
+            <div class="img-caption">📸 Step 1: Interface configuration console</div>
+          </div>
+        </div>
+        
+        <div class="step-card">
+          <div class="step-header">
+            <span class="step-badge">STEP 2</span>
+            <h2 class="step-title">Generate AI Voiceovers or Upload Audio</h2>
+          </div>
+          <p class="step-text">Convert text into natural AI speech or upload recorded audio tracks.</p>
+          <div class="img-container">
+            <img src="https://images.ctfassets.net/3pr2433ts8v0/53iR6aM3qL4kK110pR22wE/8267230bdfadcf4ec163a8a81eb82d38/Joiin_Report_Preview.png" alt="Generate AI Voiceovers or Upload Audio screenshot" loading="lazy">
+            <div class="img-caption">📸 Step 2: Interface configuration console</div>
+          </div>
+        </div>
+        
 
-  <div class="img-card">
-    <img src="https://images.ctfassets.net/3pr2433ts8v0/40wV3i9mZJzK2406kR36wE/2387140bdfadcf4ec163a8a81eb82d37/Joiin_Dashboard_Preview.png" alt="Initialize Platform Connection interface">
-    <p>📸 Figure 1: Joiin financial consolidation software dashboard view.</p>
+  <div class="cta">
+    <h2>Ready to implement Audiorista?</h2>
+    <p>Access official platform tools and start your trial in minutes.</p>
+    <a href="https://www.audiorista.com/?red=stackm" class="btn" target="_blank" rel="noopener">Launch Audiorista Portal &rarr;</a>
   </div>
 
-  <h2>Step 2: Generate Consolidated Reports</h2>
-  <p>Run real-time reports and export financial statements.</p>
-
-  <div class="img-card">
-    <img src="https://images.ctfassets.net/3pr2433ts8v0/53iR6aM3qL4kK110pR22wE/8267230bdfadcf4ec163a8a81eb82d38/Joiin_Report_Preview.png" alt="Generate Consolidated Reports interface">
-    <p>📸 Figure 2: Exported multi-entity financial statement.</p>
-  </div>
-
-  <div class="cta-box">
-    <h2>Ready to automate this workflow?</h2>
-    <p>Start generating consolidated reports in under 10 minutes using Joiin.</p>
-    <a href="https://www.audiorista.com/?red=stackm" class="btn" target="_blank" rel="noopener">Launch Official Joiin Portal &rarr;</a>
-  </div>
-
-  <p><a href="/" style="color: #666; text-decoration: none;">&larr; Back to Stack Manuals Index</a></p>
-
+  <p style="margin-top: 30px;"><a href="/" style="color: #64748b; text-decoration: none;">&larr; Back to Stack Manuals Index</a></p>
+</div>
 </body>
 </html>
