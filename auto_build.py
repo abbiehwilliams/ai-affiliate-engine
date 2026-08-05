@@ -27,9 +27,8 @@ for key, link in links.items():
     
     prompt = f"Create a clean, complete HTML webpage for {title}. Target audience: CFOs and accountants. Affiliate link: {link}. Include inline CSS styles. Return ONLY valid HTML code without markdown code blocks."
 
-    # Updated to gemini-3.5-flash
     response = client.models.generate_content(
-        model='gemini-3.5-flash',
+        model='gemini-2.5-flash',
         contents=prompt
     )
 
