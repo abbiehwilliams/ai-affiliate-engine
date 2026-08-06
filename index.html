@@ -5,69 +5,103 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Stack Manuals - Technical SaaS Integration Directory</title>
   <style>
+    :root {
+      --pastel-blue-bg: #f0f4f9;
+      --pastel-blue-card: #ffffff;
+      --pastel-blue-border: #dbe4ef;
+      --pastel-blue-accent: #3b82f6;
+      --pastel-blue-header: #1e3a8a;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+    }
+    * { box-sizing: border-box; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      max-width: 920px;
-      margin: 0 auto;
-      padding: 50px 20px;
-      color: #0f172a;
-      background: #f8fafc;
+      margin: 0;
+      padding: 0;
+      color: var(--text-main);
+      background: var(--pastel-blue-bg);
+      line-height: 1.6;
     }
-    .header {
+    .navbar {
+      background: #ffffff;
+      border-bottom: 1px solid var(--pastel-blue-border);
+      padding: 16px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .navbar-brand {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--pastel-blue-header);
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+    .hero {
+      background: #ffffff;
+      border-bottom: 1px solid var(--pastel-blue-border);
+      padding: 60px 20px 40px 20px;
       text-align: center;
-      margin-bottom: 35px;
     }
     h1 {
-      font-size: 2.5rem;
-      margin: 0 0 10px 0;
-      color: #0f172a;
+      font-size: 2.6rem;
+      margin: 0 0 12px 0;
+      color: var(--pastel-blue-header);
+      font-weight: 800;
     }
     p.subtitle {
-      color: #64748b;
+      color: var(--text-muted);
       font-size: 1.15rem;
-      margin: 0 0 30px 0;
+      margin: 0 0 35px 0;
     }
     .search-box-wrapper {
       position: relative;
-      max-width: 600px;
-      margin: 0 auto 40px auto;
+      max-width: 620px;
+      margin: 0 auto;
     }
     .search-input {
       width: 100%;
-      padding: 16px 20px;
+      padding: 16px 22px;
       font-size: 1.05rem;
-      border: 2px solid #e2e8f0;
-      border-radius: 10px;
+      border: 2px solid var(--pastel-blue-border);
+      border-radius: 8px;
       outline: none;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+      background: #ffffff;
+      box-shadow: 0 4px 12px rgba(30, 58, 138, 0.03);
       transition: all 0.2s ease;
     }
     .search-input:focus {
-      border-color: #0070f3;
-      box-shadow: 0 4px 16px rgba(0, 112, 243, 0.12);
+      border-color: var(--pastel-blue-accent);
+      box-shadow: 0 4px 16px rgba(59, 130, 246, 0.15);
+    }
+    .container {
+      max-width: 920px;
+      margin: 40px auto 80px auto;
+      padding: 0 20px;
     }
     .tool-section {
-      margin-bottom: 45px;
+      margin-bottom: 50px;
     }
     .tool-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-bottom: 2px solid #e2e8f0;
-      padding-bottom: 10px;
+      border-bottom: 2px solid var(--pastel-blue-border);
+      padding-bottom: 12px;
       margin-bottom: 20px;
     }
     .tool-header h2 {
       font-size: 1.4rem;
       margin: 0;
-      color: #0f172a;
+      color: var(--pastel-blue-header);
     }
     .tool-count {
-      background: #e2e8f0;
-      color: #475569;
+      background: #e0f2fe;
+      color: #0369a1;
       font-weight: 700;
       font-size: 0.8rem;
-      padding: 4px 10px;
+      padding: 4px 12px;
       border-radius: 999px;
     }
     .grid {
@@ -75,26 +109,25 @@
       gap: 16px;
     }
     .card {
-      background: white;
-      border: 1px solid #e2e8f0;
-      border-radius: 10px;
-      padding: 20px 24px;
+      background: #ffffff;
+      border: 1px solid var(--pastel-blue-border);
+      border-radius: 8px;
+      padding: 22px 26px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.01);
       transition: all 0.2s ease;
     }
     .card:hover {
-      border-color: #0070f3;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.04);
+      border-color: var(--pastel-blue-accent);
+      box-shadow: 0 6px 16px rgba(30, 58, 138, 0.06);
       transform: translateY(-1px);
     }
     .card-tag {
       font-size: 0.75rem;
       font-weight: 700;
-      color: #0369a1;
-      background: #e0f2fe;
+      color: var(--pastel-blue-accent);
+      background: #eef4fb;
       padding: 3px 10px;
       border-radius: 4px;
       text-transform: uppercase;
@@ -102,16 +135,16 @@
     }
     .card h3 {
       margin: 8px 0 0 0;
-      font-size: 1.1rem;
+      font-size: 1.15rem;
     }
     .card h3 a {
       text-decoration: none;
-      color: #0f172a;
-      font-weight: 600;
+      color: var(--pastel-blue-header);
+      font-weight: 700;
     }
     .card-arrow {
       font-size: 1.5rem;
-      color: #0070f3;
+      color: var(--pastel-blue-accent);
       text-decoration: none;
       font-weight: bold;
       padding-left: 20px;
@@ -120,32 +153,37 @@
       display: none;
       text-align: center;
       padding: 40px;
-      color: #64748b;
+      color: var(--text-muted);
       font-size: 1.1rem;
     }
   </style>
 </head>
 <body>
 
-  <div class="header">
-    <h1>🛠️ Stack Manuals</h1>
-    <p class="subtitle">Searchable step-by-step technical guides, integration manuals, and SaaS tutorials.</p>
+  <nav class="navbar">
+    <a href="/" class="navbar-brand">Stack Manuals</a>
+  </nav>
+
+  <div class="hero">
+    <h1>Technical Integration Manuals</h1>
+    <p class="subtitle">Searchable setup guides, configuration manuals, and SaaS tutorials.</p>
 
     <div class="search-box-wrapper">
-      <input type="text" id="manualSearch" class="search-input" placeholder="🔍 Search guides (e.g., 'Xero', 'downtime', 'polls', 'email')..." onkeyup="filterManuals()">
+      <input type="text" id="manualSearch" class="search-input" placeholder="Search guides (e.g., 'Xero', 'downtime', 'polls', 'email')..." onkeyup="filterManuals()">
     </div>
   </div>
 
-  <div id="noResults" class="no-results">
-    No guides found matching your search. Try searching for "Email", "Polls", or "Downtime".
-  </div>
+  <div class="container">
+    <div id="noResults" class="no-results">
+      No integration manuals found matching your query.
+    </div>
 
-  <div id="sectionsContainer">
-    
+    <div id="sectionsContainer">
+      
     <div class="tool-section" data-section-tool="joiin">
       <div class="tool-header">
-        <h2>🔧 Joiin Manuals</h2>
-        <span class="tool-count">4 Guides</span>
+        <h2>Joiin Integration Manuals</h2>
+        <span class="tool-count">2 Guides</span>
       </div>
       <div class="grid">
         
@@ -165,20 +203,206 @@
           <a href="/pages/multi-currency-financial-reporting.html" class="card-arrow">&rarr;</a>
         </div>
         
-        <div class="card manual-card" data-title="remove internal trading & double-counted revenue" data-tool="joiin">
+      </div>
+    </div>
+    
+    <div class="tool-section" data-section-tool="official portal">
+      <div class="tool-header">
+        <h2>Official Portal Integration Manuals</h2>
+        <span class="tool-count">24 Guides</span>
+      </div>
+      <div class="grid">
+        
+        <div class="card manual-card" data-title="integration guide for intercompany eliminations guide" data-tool="official portal">
           <div>
-            <span class="card-tag">Financial Consolidation</span>
-            <h3><a href="/pages/intercompany-eliminations-guide.html">Remove Internal Trading & Double-Counted Revenue</a></h3>
+            <span class="card-tag">General Integration</span>
+            <h3><a href="/pages/intercompany-eliminations-guide.html">Integration Guide for Intercompany Eliminations Guide</a></h3>
           </div>
           <a href="/pages/intercompany-eliminations-guide.html" class="card-arrow">&rarr;</a>
         </div>
         
-        <div class="card manual-card" data-title="create professional pdf management packs for directors" data-tool="joiin">
+        <div class="card manual-card" data-title="integration guide for automated board packs and kpi reports" data-tool="official portal">
           <div>
-            <span class="card-tag">Financial Consolidation</span>
-            <h3><a href="/pages/automated-board-packs-and-kpi-reports.html">Create Professional PDF Management Packs for Directors</a></h3>
+            <span class="card-tag">General Integration</span>
+            <h3><a href="/pages/automated-board-packs-and-kpi-reports.html">Integration Guide for Automated Board Packs And Kpi Reports</a></h3>
           </div>
           <a href="/pages/automated-board-packs-and-kpi-reports.html" class="card-arrow">&rarr;</a>
+        </div>
+        
+        <div class="card manual-card" data-title="integration guide for auto currency switcher location" data-tool="official portal">
+          <div>
+            <span class="card-tag">General Integration</span>
+            <h3><a href="/pages/auto-currency-switcher-location.html">Integration Guide for Auto Currency Switcher Location</a></h3>
+          </div>
+          <a href="/pages/auto-currency-switcher-location.html" class="card-arrow">&rarr;</a>
+        </div>
+        
+        <div class="card manual-card" data-title="integration guide for block unwanted country traffic website" data-tool="official portal">
+          <div>
+            <span class="card-tag">General Integration</span>
+            <h3><a href="/pages/block-unwanted-country-traffic-website.html">Integration Guide for Block Unwanted Country Traffic Website</a></h3>
+          </div>
+          <a href="/pages/block-unwanted-country-traffic-website.html" class="card-arrow">&rarr;</a>
+        </div>
+        
+        <div class="card manual-card" data-title="integration guide for location based popup banners" data-tool="official portal">
+          <div>
+            <span class="card-tag">General Integration</span>
+            <h3><a href="/pages/location-based-popup-banners.html">Integration Guide for Location Based Popup Banners</a></h3>
+          </div>
+          <a href="/pages/location-based-popup-banners.html" class="card-arrow">&rarr;</a>
+        </div>
+        
+        <div class="card manual-card" data-title="integration guide for monetize audiobooks private audio apps" data-tool="official portal">
+          <div>
+            <span class="card-tag">General Integration</span>
+            <h3><a href="/pages/monetize-audiobooks-private-audio-apps.html">Integration Guide for Monetize Audiobooks Private Audio Apps</a></h3>
+          </div>
+          <a href="/pages/monetize-audiobooks-private-audio-apps.html" class="card-arrow">&rarr;</a>
+        </div>
+        
+        <div class="card manual-card" data-title="integration guide for publish white label audiobook app" data-tool="official portal">
+          <div>
+            <span class="card-tag">General Integration</span>
+            <h3><a href="/pages/publish-white-label-audiobook-app.html">Integration Guide for Publish White Label Audiobook App</a></h3>
+          </div>
+          <a href="/pages/publish-white-label-audiobook-app.html" class="card-arrow">&rarr;</a>
+        </div>
+        
+        <div class="card manual-card" data-title="integration guide for branded audio app for creators" data-tool="official portal">
+          <div>
+            <span class="card-tag">General Integration</span>
+            <h3><a href="/pages/branded-audio-app-for-creators.html">Integration Guide for Branded Audio App For Creators</a></h3>
+          </div>
+          <a href="/pages/branded-audio-app-for-creators.html" class="card-arrow">&rarr;</a>
+        </div>
+        
+        <div class="card manual-card" data-title="integration guide for clean spam traps email marketing" data-tool="official portal">
+          <div>
+            <span class="card-tag">General Integration</span>
+            <h3><a href="/pages/clean-spam-traps-email-marketing.html">Integration Guide for Clean Spam Traps Email Marketing</a></h3>
+          </div>
+          <a href="/pages/clean-spam-traps-email-marketing.html" class="card-arrow">&rarr;</a>
+        </div>
+        
+        <div class="card manual-card" data-title="integration guide for real time api email verification forms" data-tool="official portal">
+          <div>
+            <span class="card-tag">General Integration</span>
+            <h3><a href="/pages/real-time-api-email-verification-forms.html">Integration Guide for Real Time Api Email Verification Forms</a></h3>
+          </div>
+          <a href="/pages/real-time-api-email-verification-forms.html" class="card-arrow">&rarr;</a>
+        </div>
+        
+        <div class="card manual-card" data-title="integration guide for prevent domain blacklisting deliverability" data-tool="official portal">
+          <div>
+            <span class="card-tag">General Integration</span>
+            <h3><a href="/pages/prevent-domain-blacklisting-deliverability.html">Integration Guide for Prevent Domain Blacklisting Deliverability</a></h3>
+          </div>
+          <a href="/pages/prevent-domain-blacklisting-deliverability.html" class="card-arrow">&rarr;</a>
+        </div>
+        
+        <div class="card manual-card" data-title="integration guide for time zone tracking distributed teams" data-tool="official portal">
+          <div>
+            <span class="card-tag">General Integration</span>
+            <h3><a href="/pages/time-zone-tracking-distributed-teams.html">Integration Guide for Time Zone Tracking Distributed Teams</a></h3>
+          </div>
+          <a href="/pages/time-zone-tracking-distributed-teams.html" class="card-arrow">&rarr;</a>
+        </div>
+        
+        <div class="card manual-card" data-title="integration guide for secure document sharing remote portal" data-tool="official portal">
+          <div>
+            <span class="card-tag">General Integration</span>
+            <h3><a href="/pages/secure-document-sharing-remote-portal.html">Integration Guide for Secure Document Sharing Remote Portal</a></h3>
+          </div>
+          <a href="/pages/secure-document-sharing-remote-portal.html" class="card-arrow">&rarr;</a>
+        </div>
+        
+        <div class="card manual-card" data-title="integration guide for employee activity performance monitoring" data-tool="official portal">
+          <div>
+            <span class="card-tag">General Integration</span>
+            <h3><a href="/pages/employee-activity-performance-monitoring.html">Integration Guide for Employee Activity Performance Monitoring</a></h3>
+          </div>
+          <a href="/pages/employee-activity-performance-monitoring.html" class="card-arrow">&rarr;</a>
+        </div>
+        
+        <div class="card manual-card" data-title="integration guide for fix cold emails going to spam" data-tool="official portal">
+          <div>
+            <span class="card-tag">General Integration</span>
+            <h3><a href="/pages/fix-cold-emails-going-to-spam.html">Integration Guide for Fix Cold Emails Going To Spam</a></h3>
+          </div>
+          <a href="/pages/fix-cold-emails-going-to-spam.html" class="card-arrow">&rarr;</a>
+        </div>
+        
+        <div class="card manual-card" data-title="integration guide for blacklist monitoring auto delisting" data-tool="official portal">
+          <div>
+            <span class="card-tag">General Integration</span>
+            <h3><a href="/pages/blacklist-monitoring-auto-delisting.html">Integration Guide for Blacklist Monitoring Auto Delisting</a></h3>
+          </div>
+          <a href="/pages/blacklist-monitoring-auto-delisting.html" class="card-arrow">&rarr;</a>
+        </div>
+        
+        <div class="card manual-card" data-title="integration guide for language specific email warmup guide" data-tool="official portal">
+          <div>
+            <span class="card-tag">General Integration</span>
+            <h3><a href="/pages/language-specific-email-warmup-guide.html">Integration Guide for Language Specific Email Warmup Guide</a></h3>
+          </div>
+          <a href="/pages/language-specific-email-warmup-guide.html" class="card-arrow">&rarr;</a>
+        </div>
+        
+        <div class="card manual-card" data-title="integration guide for linkedin cold outreach automation guide" data-tool="official portal">
+          <div>
+            <span class="card-tag">General Integration</span>
+            <h3><a href="/pages/linkedin-cold-outreach-automation-guide.html">Integration Guide for Linkedin Cold Outreach Automation Guide</a></h3>
+          </div>
+          <a href="/pages/linkedin-cold-outreach-automation-guide.html" class="card-arrow">&rarr;</a>
+        </div>
+        
+        <div class="card manual-card" data-title="integration guide for inbox rotation deliverability cold email" data-tool="official portal">
+          <div>
+            <span class="card-tag">General Integration</span>
+            <h3><a href="/pages/inbox-rotation-deliverability-cold-email.html">Integration Guide for Inbox Rotation Deliverability Cold Email</a></h3>
+          </div>
+          <a href="/pages/inbox-rotation-deliverability-cold-email.html" class="card-arrow">&rarr;</a>
+        </div>
+        
+        <div class="card manual-card" data-title="integration guide for b2b prospect lead database outreach" data-tool="official portal">
+          <div>
+            <span class="card-tag">General Integration</span>
+            <h3><a href="/pages/b2b-prospect-lead-database-outreach.html">Integration Guide for B2B Prospect Lead Database Outreach</a></h3>
+          </div>
+          <a href="/pages/b2b-prospect-lead-database-outreach.html" class="card-arrow">&rarr;</a>
+        </div>
+        
+        <div class="card manual-card" data-title="integration guide for word cloud generator audience feedback" data-tool="official portal">
+          <div>
+            <span class="card-tag">General Integration</span>
+            <h3><a href="/pages/word-cloud-generator-audience-feedback.html">Integration Guide for Word Cloud Generator Audience Feedback</a></h3>
+          </div>
+          <a href="/pages/word-cloud-generator-audience-feedback.html" class="card-arrow">&rarr;</a>
+        </div>
+        
+        <div class="card manual-card" data-title="integration guide for spinner wheel random name picker events" data-tool="official portal">
+          <div>
+            <span class="card-tag">General Integration</span>
+            <h3><a href="/pages/spinner-wheel-random-name-picker-events.html">Integration Guide for Spinner Wheel Random Name Picker Events</a></h3>
+          </div>
+          <a href="/pages/spinner-wheel-random-name-picker-events.html" class="card-arrow">&rarr;</a>
+        </div>
+        
+        <div class="card manual-card" data-title="integration guide for ssl certificate expiry monitoring alerts" data-tool="official portal">
+          <div>
+            <span class="card-tag">General Integration</span>
+            <h3><a href="/pages/ssl-certificate-expiry-monitoring-alerts.html">Integration Guide for Ssl Certificate Expiry Monitoring Alerts</a></h3>
+          </div>
+          <a href="/pages/ssl-certificate-expiry-monitoring-alerts.html" class="card-arrow">&rarr;</a>
+        </div>
+        
+        <div class="card manual-card" data-title="integration guide for ping cron job heartbeat monitoring" data-tool="official portal">
+          <div>
+            <span class="card-tag">General Integration</span>
+            <h3><a href="/pages/ping-cron-job-heartbeat-monitoring.html">Integration Guide for Ping Cron Job Heartbeat Monitoring</a></h3>
+          </div>
+          <a href="/pages/ping-cron-job-heartbeat-monitoring.html" class="card-arrow">&rarr;</a>
         </div>
         
       </div>
@@ -186,8 +410,8 @@
     
     <div class="tool-section" data-section-tool="geo targetly">
       <div class="tool-header">
-        <h2>🔧 Geo Targetly Manuals</h2>
-        <span class="tool-count">4 Guides</span>
+        <h2>Geo Targetly Integration Manuals</h2>
+        <span class="tool-count">1 Guides</span>
       </div>
       <div class="grid">
         
@@ -199,37 +423,13 @@
           <a href="/pages/geo-redirect-website-visitors-by-country.html" class="card-arrow">&rarr;</a>
         </div>
         
-        <div class="card manual-card" data-title="automate currency switchers for global e-commerce" data-tool="geo targetly">
-          <div>
-            <span class="card-tag">Website Location & Traffic</span>
-            <h3><a href="/pages/auto-currency-switcher-location.html">Automate Currency Switchers for Global E-Commerce</a></h3>
-          </div>
-          <a href="/pages/auto-currency-switcher-location.html" class="card-arrow">&rarr;</a>
-        </div>
-        
-        <div class="card manual-card" data-title="block specific countries or regions from viewing your site" data-tool="geo targetly">
-          <div>
-            <span class="card-tag">Website Location & Traffic</span>
-            <h3><a href="/pages/block-unwanted-country-traffic-website.html">Block Specific Countries or Regions from Viewing Your Site</a></h3>
-          </div>
-          <a href="/pages/block-unwanted-country-traffic-website.html" class="card-arrow">&rarr;</a>
-        </div>
-        
-        <div class="card manual-card" data-title="display targeted promotions based on visitor city or country" data-tool="geo targetly">
-          <div>
-            <span class="card-tag">Website Location & Traffic</span>
-            <h3><a href="/pages/location-based-popup-banners.html">Display Targeted Promotions Based on Visitor City or Country</a></h3>
-          </div>
-          <a href="/pages/location-based-popup-banners.html" class="card-arrow">&rarr;</a>
-        </div>
-        
       </div>
     </div>
     
     <div class="tool-section" data-section-tool="audiorista">
       <div class="tool-header">
-        <h2>🔧 Audiorista Manuals</h2>
-        <span class="tool-count">4 Guides</span>
+        <h2>Audiorista Integration Manuals</h2>
+        <span class="tool-count">1 Guides</span>
       </div>
       <div class="grid">
         
@@ -241,37 +441,13 @@
           <a href="/pages/convert-articles-audio-app-podcast.html" class="card-arrow">&rarr;</a>
         </div>
         
-        <div class="card manual-card" data-title="monetize audio content directly without platform fees" data-tool="audiorista">
-          <div>
-            <span class="card-tag">Audio Publishing & Mobile Apps</span>
-            <h3><a href="/pages/monetize-audiobooks-private-audio-apps.html">Monetize Audio Content Directly Without Platform Fees</a></h3>
-          </div>
-          <a href="/pages/monetize-audiobooks-private-audio-apps.html" class="card-arrow">&rarr;</a>
-        </div>
-        
-        <div class="card manual-card" data-title="launch your own branded audio streaming app" data-tool="audiorista">
-          <div>
-            <span class="card-tag">Audio Publishing & Mobile Apps</span>
-            <h3><a href="/pages/publish-white-label-audiobook-app.html">Launch Your Own Branded Audio Streaming App</a></h3>
-          </div>
-          <a href="/pages/publish-white-label-audiobook-app.html" class="card-arrow">&rarr;</a>
-        </div>
-        
-        <div class="card manual-card" data-title="build private podcasts & paid audio communities" data-tool="audiorista">
-          <div>
-            <span class="card-tag">Audio Publishing & Mobile Apps</span>
-            <h3><a href="/pages/branded-audio-app-for-creators.html">Build Private Podcasts & Paid Audio Communities</a></h3>
-          </div>
-          <a href="/pages/branded-audio-app-for-creators.html" class="card-arrow">&rarr;</a>
-        </div>
-        
       </div>
     </div>
     
     <div class="tool-section" data-section-tool="emaillistverify">
       <div class="tool-header">
-        <h2>🔧 EmailListVerify Manuals</h2>
-        <span class="tool-count">4 Guides</span>
+        <h2>EmailListVerify Integration Manuals</h2>
+        <span class="tool-count">1 Guides</span>
       </div>
       <div class="grid">
         
@@ -283,37 +459,13 @@
           <a href="/pages/bulk-verify-email-lists-reduce-bounces.html" class="card-arrow">&rarr;</a>
         </div>
         
-        <div class="card manual-card" data-title="protect sender reputation by eliminating spam traps" data-tool="emaillistverify">
-          <div>
-            <span class="card-tag">Email Verification & Deliverability</span>
-            <h3><a href="/pages/clean-spam-traps-email-marketing.html">Protect Sender Reputation by Eliminating Spam Traps</a></h3>
-          </div>
-          <a href="/pages/clean-spam-traps-email-marketing.html" class="card-arrow">&rarr;</a>
-        </div>
-        
-        <div class="card manual-card" data-title="block fake email signups on web forms automatically" data-tool="emaillistverify">
-          <div>
-            <span class="card-tag">Email Verification & Deliverability</span>
-            <h3><a href="/pages/real-time-api-email-verification-forms.html">Block Fake Email Signups on Web Forms Automatically</a></h3>
-          </div>
-          <a href="/pages/real-time-api-email-verification-forms.html" class="card-arrow">&rarr;</a>
-        </div>
-        
-        <div class="card manual-card" data-title="monitor domain blacklists & mx health checks" data-tool="emaillistverify">
-          <div>
-            <span class="card-tag">Email Verification & Deliverability</span>
-            <h3><a href="/pages/prevent-domain-blacklisting-deliverability.html">Monitor Domain Blacklists & MX Health Checks</a></h3>
-          </div>
-          <a href="/pages/prevent-domain-blacklisting-deliverability.html" class="card-arrow">&rarr;</a>
-        </div>
-        
       </div>
     </div>
     
     <div class="tool-section" data-section-tool="icompass">
       <div class="tool-header">
-        <h2>🔧 iCompass Manuals</h2>
-        <span class="tool-count">4 Guides</span>
+        <h2>iCompass Integration Manuals</h2>
+        <span class="tool-count">1 Guides</span>
       </div>
       <div class="grid">
         
@@ -325,37 +477,13 @@
           <a href="/pages/automated-remote-team-task-management.html" class="card-arrow">&rarr;</a>
         </div>
         
-        <div class="card manual-card" data-title="manage time zone synchronization for remote organizations" data-tool="icompass">
-          <div>
-            <span class="card-tag">Remote Work & Team Management</span>
-            <h3><a href="/pages/time-zone-tracking-distributed-teams.html">Manage Time Zone Synchronization for Remote Organizations</a></h3>
-          </div>
-          <a href="/pages/time-zone-tracking-distributed-teams.html" class="card-arrow">&rarr;</a>
-        </div>
-        
-        <div class="card manual-card" data-title="centralize enterprise documents with unified ssl security" data-tool="icompass">
-          <div>
-            <span class="card-tag">Remote Work & Team Management</span>
-            <h3><a href="/pages/secure-document-sharing-remote-portal.html">Centralize Enterprise Documents with Unified SSL Security</a></h3>
-          </div>
-          <a href="/pages/secure-document-sharing-remote-portal.html" class="card-arrow">&rarr;</a>
-        </div>
-        
-        <div class="card manual-card" data-title="track remote employee productivity & project hours" data-tool="icompass">
-          <div>
-            <span class="card-tag">Remote Work & Team Management</span>
-            <h3><a href="/pages/employee-activity-performance-monitoring.html">Track Remote Employee Productivity & Project Hours</a></h3>
-          </div>
-          <a href="/pages/employee-activity-performance-monitoring.html" class="card-arrow">&rarr;</a>
-        </div>
-        
       </div>
     </div>
     
     <div class="tool-section" data-section-tool="warmup inbox">
       <div class="tool-header">
-        <h2>🔧 Warmup Inbox Manuals</h2>
-        <span class="tool-count">4 Guides</span>
+        <h2>Warmup Inbox Integration Manuals</h2>
+        <span class="tool-count">1 Guides</span>
       </div>
       <div class="grid">
         
@@ -367,37 +495,13 @@
           <a href="/pages/warm-up-new-email-domain-cold-outreach.html" class="card-arrow">&rarr;</a>
         </div>
         
-        <div class="card manual-card" data-title="diagnose deliverability drop-offs & rescue spam placement" data-tool="warmup inbox">
-          <div>
-            <span class="card-tag">Email Deliverability & Outreach</span>
-            <h3><a href="/pages/fix-cold-emails-going-to-spam.html">Diagnose Deliverability Drop-offs & Rescue Spam Placement</a></h3>
-          </div>
-          <a href="/pages/fix-cold-emails-going-to-spam.html" class="card-arrow">&rarr;</a>
-        </div>
-        
-        <div class="card manual-card" data-title="monitor 100+ email blacklists with automated alerts" data-tool="warmup inbox">
-          <div>
-            <span class="card-tag">Email Deliverability & Outreach</span>
-            <h3><a href="/pages/blacklist-monitoring-auto-delisting.html">Monitor 100+ Email Blacklists with Automated Alerts</a></h3>
-          </div>
-          <a href="/pages/blacklist-monitoring-auto-delisting.html" class="card-arrow">&rarr;</a>
-        </div>
-        
-        <div class="card manual-card" data-title="warm up inboxes in native target market languages" data-tool="warmup inbox">
-          <div>
-            <span class="card-tag">Email Deliverability & Outreach</span>
-            <h3><a href="/pages/language-specific-email-warmup-guide.html">Warm Up Inboxes in Native Target Market Languages</a></h3>
-          </div>
-          <a href="/pages/language-specific-email-warmup-guide.html" class="card-arrow">&rarr;</a>
-        </div>
-        
       </div>
     </div>
     
     <div class="tool-section" data-section-tool="woodpecker">
       <div class="tool-header">
-        <h2>🔧 Woodpecker Manuals</h2>
-        <span class="tool-count">4 Guides</span>
+        <h2>Woodpecker Integration Manuals</h2>
+        <span class="tool-count">1 Guides</span>
       </div>
       <div class="grid">
         
@@ -409,37 +513,13 @@
           <a href="/pages/automated-cold-email-drip-campaigns.html" class="card-arrow">&rarr;</a>
         </div>
         
-        <div class="card manual-card" data-title="combine linkedin automation with cold email sequences" data-tool="woodpecker">
-          <div>
-            <span class="card-tag">Sales Automation & Cold Outreach</span>
-            <h3><a href="/pages/linkedin-cold-outreach-automation-guide.html">Combine LinkedIn Automation with Cold Email Sequences</a></h3>
-          </div>
-          <a href="/pages/linkedin-cold-outreach-automation-guide.html" class="card-arrow">&rarr;</a>
-        </div>
-        
-        <div class="card manual-card" data-title="distribute campaign sending across multiple mailboxes" data-tool="woodpecker">
-          <div>
-            <span class="card-tag">Sales Automation & Cold Outreach</span>
-            <h3><a href="/pages/inbox-rotation-deliverability-cold-email.html">Distribute Campaign Sending Across Multiple Mailboxes</a></h3>
-          </div>
-          <a href="/pages/inbox-rotation-deliverability-cold-email.html" class="card-arrow">&rarr;</a>
-        </div>
-        
-        <div class="card manual-card" data-title="search b2b lead databases & import directly to campaigns" data-tool="woodpecker">
-          <div>
-            <span class="card-tag">Sales Automation & Cold Outreach</span>
-            <h3><a href="/pages/b2b-prospect-lead-database-outreach.html">Search B2B Lead Databases & Import Directly to Campaigns</a></h3>
-          </div>
-          <a href="/pages/b2b-prospect-lead-database-outreach.html" class="card-arrow">&rarr;</a>
-        </div>
-        
       </div>
     </div>
     
     <div class="tool-section" data-section-tool="ahaslides">
       <div class="tool-header">
-        <h2>🔧 AhaSlides Manuals</h2>
-        <span class="tool-count">4 Guides</span>
+        <h2>AhaSlides Integration Manuals</h2>
+        <span class="tool-count">2 Guides</span>
       </div>
       <div class="grid">
         
@@ -459,29 +539,13 @@
           <a href="/pages/host-live-qa-sessions-events-webinars.html" class="card-arrow">&rarr;</a>
         </div>
         
-        <div class="card manual-card" data-title="create dynamic real-time word clouds in meetings" data-tool="ahaslides">
-          <div>
-            <span class="card-tag">Presentations & Audience Engagement</span>
-            <h3><a href="/pages/word-cloud-generator-audience-feedback.html">Create Dynamic Real-Time Word Clouds in Meetings</a></h3>
-          </div>
-          <a href="/pages/word-cloud-generator-audience-feedback.html" class="card-arrow">&rarr;</a>
-        </div>
-        
-        <div class="card manual-card" data-title="add gamification with custom interactive spinner wheels" data-tool="ahaslides">
-          <div>
-            <span class="card-tag">Presentations & Audience Engagement</span>
-            <h3><a href="/pages/spinner-wheel-random-name-picker-events.html">Add Gamification with Custom Interactive Spinner Wheels</a></h3>
-          </div>
-          <a href="/pages/spinner-wheel-random-name-picker-events.html" class="card-arrow">&rarr;</a>
-        </div>
-        
       </div>
     </div>
     
     <div class="tool-section" data-section-tool="uptimerobot">
       <div class="tool-header">
-        <h2>🔧 UptimeRobot Manuals</h2>
-        <span class="tool-count">4 Guides</span>
+        <h2>UptimeRobot Integration Manuals</h2>
+        <span class="tool-count">2 Guides</span>
       </div>
       <div class="grid">
         
@@ -501,25 +565,10 @@
           <a href="/pages/status-page-setup-incident-communication.html" class="card-arrow">&rarr;</a>
         </div>
         
-        <div class="card manual-card" data-title="prevent broken ssl certificates with automated expiry reminders" data-tool="uptimerobot">
-          <div>
-            <span class="card-tag">Uptime & Server Monitoring</span>
-            <h3><a href="/pages/ssl-certificate-expiry-monitoring-alerts.html">Prevent Broken SSL Certificates with Automated Expiry Reminders</a></h3>
-          </div>
-          <a href="/pages/ssl-certificate-expiry-monitoring-alerts.html" class="card-arrow">&rarr;</a>
-        </div>
-        
-        <div class="card manual-card" data-title="ensure silent background jobs run successfully" data-tool="uptimerobot">
-          <div>
-            <span class="card-tag">Uptime & Server Monitoring</span>
-            <h3><a href="/pages/ping-cron-job-heartbeat-monitoring.html">Ensure Silent Background Jobs Run Successfully</a></h3>
-          </div>
-          <a href="/pages/ping-cron-job-heartbeat-monitoring.html" class="card-arrow">&rarr;</a>
-        </div>
-        
       </div>
     </div>
     
+    </div>
   </div>
 
   <script>

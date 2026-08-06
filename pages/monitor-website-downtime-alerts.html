@@ -3,113 +3,175 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How to Set Up Automated Website Downtime Monitoring & Alerts - Stack Manuals</title>
+  <title>How to Set Up Automated Website Downtime Monitoring and Alerts - Stack Manuals</title>
   <style>
     :root {
-      --primary: #0070f3;
-      --primary-hover: #0051a2;
-      --slate-900: #0f172a;
-      --slate-800: #1e293b;
-      --slate-600: #475569;
-      --slate-100: #f1f5f9;
-      --border: #e2e8f0;
+      --pastel-blue-bg: #f0f4f9;
+      --pastel-blue-card: #ffffff;
+      --pastel-blue-border: #dbe4ef;
+      --pastel-blue-accent: #3b82f6;
+      --pastel-blue-header: #1e3a8a;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --box-light: #eef4fb;
     }
     * { box-sizing: border-box; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      max-width: 820px;
-      margin: 0 auto;
-      padding: 40px 20px 80px 20px;
-      color: var(--slate-900);
-      background: #f8fafc;
+      margin: 0;
+      padding: 0;
+      color: var(--text-main);
+      background: var(--pastel-blue-bg);
       line-height: 1.65;
     }
-    .container {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 40px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-    }
-    .badge-bar {
+    .navbar {
+      background: #ffffff;
+      border-bottom: 1px solid var(--pastel-blue-border);
+      padding: 16px 40px;
       display: flex;
       align-items: center;
-      gap: 10px;
-      margin-bottom: 15px;
+      justify-content: space-between;
     }
-    .badge {
-      background: #e0f2fe;
-      color: #0369a1;
-      padding: 4px 12px;
+    .navbar-brand {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--pastel-blue-header);
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+    .navbar-btn {
+      background: var(--pastel-blue-accent);
+      color: white;
+      text-decoration: none;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    .hero-banner {
+      background: #ffffff;
+      border-bottom: 1px solid var(--pastel-blue-border);
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .hero-banner-inner {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .category-badge {
+      display: inline-block;
+      background: var(--box-light);
+      color: var(--pastel-blue-header);
+      padding: 4px 14px;
       border-radius: 999px;
       font-weight: 700;
-      font-size: 0.75rem;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 15px;
+    }
+    h1 {
+      font-size: 2.2rem;
+      color: var(--pastel-blue-header);
+      margin: 0 0 15px 0;
+      line-height: 1.25;
+      font-weight: 800;
+    }
+    .author-line {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 0;
+    }
+    .content-wrapper {
+      max-width: 860px;
+      margin: 40px auto 80px auto;
+      padding: 0 20px;
+    }
+    .main-card {
+      background: var(--pastel-blue-card);
+      border: 1px solid var(--pastel-blue-border);
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 4px 16px rgba(30, 58, 138, 0.04);
+    }
+    .hero-image-placeholder {
+      background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+      color: white;
+      border-radius: 10px;
+      padding: 40px 20px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .hero-image-placeholder h2 {
+      color: white;
+      margin: 0 0 10px 0;
+      font-size: 1.5rem;
+    }
+    .summary-text {
+      font-size: 1.1rem;
+      color: var(--text-main);
+      margin-bottom: 30px;
+    }
+    .toc-box {
+      background: var(--box-light);
+      border: 1px solid var(--pastel-blue-border);
+      border-radius: 8px;
+      padding: 24px;
+      margin-bottom: 35px;
+    }
+    .toc-box h3 {
+      margin: 0 0 12px 0;
+      font-size: 1rem;
+      color: var(--pastel-blue-header);
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
-    .status-badge {
-      background: #dcfce7;
-      color: #166534;
-      padding: 4px 12px;
-      border-radius: 999px;
+    .toc-box ul {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--pastel-blue-accent);
+    }
+    .toc-box li { margin-bottom: 8px; }
+    .toc-box a {
+      color: var(--pastel-blue-accent);
+      text-decoration: none;
       font-weight: 600;
-      font-size: 0.75rem;
     }
-    h1 {
-      font-size: 2.1rem;
-      color: var(--slate-900);
-      margin: 0 0 15px 0;
-      line-height: 1.3;
-    }
-    .intro {
-      font-size: 1.1rem;
-      color: var(--slate-600);
-      margin-bottom: 25px;
-    }
-    .meta-card {
-      background: var(--slate-100);
-      border-radius: 8px;
-      padding: 16px 20px;
-      display: flex;
-      gap: 25px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--slate-800);
-      margin-bottom: 30px;
-    }
+    .toc-box a:hover { text-decoration: underline; }
     .prereq-box {
-      background: #f0f9ff;
-      border: 1px solid #bae6fd;
-      border-radius: 8px;
+      background: #ffffff;
+      border: 1px solid var(--pastel-blue-border);
+      border-left: 4px solid var(--pastel-blue-accent);
+      border-radius: 4px;
       padding: 20px 24px;
       margin-bottom: 35px;
     }
     .prereq-box h3 {
       margin: 0 0 10px 0;
       font-size: 1rem;
-      color: #0369a1;
+      color: var(--pastel-blue-header);
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
     .prereq-box ul {
       margin: 0;
       padding-left: 20px;
-      color: var(--slate-800);
+      color: var(--text-main);
     }
     .prereq-box li { margin-bottom: 6px; }
     .section-heading {
-      font-size: 1.4rem;
-      margin: 35px 0 20px 0;
-      border-bottom: 2px solid var(--slate-100);
+      font-size: 1.5rem;
+      color: var(--pastel-blue-header);
+      margin: 40px 0 20px 0;
+      border-bottom: 2px solid var(--box-light);
       padding-bottom: 8px;
     }
     .step-card {
-      border: 1px solid var(--border);
-      border-radius: 10px;
+      border: 1px solid var(--pastel-blue-border);
+      border-radius: 8px;
       padding: 24px;
-      margin-bottom: 20px;
-      background: white;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.01);
+      margin-bottom: 24px;
+      background: #ffffff;
     }
     .step-header {
       display: flex;
@@ -118,43 +180,43 @@
       margin-bottom: 12px;
     }
     .step-number {
-      background: var(--primary);
+      background: var(--pastel-blue-accent);
       color: white;
-      width: 28px;
-      height: 28px;
+      width: 30px;
+      height: 30px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: 800;
-      font-size: 0.85rem;
+      font-size: 0.9rem;
     }
     .step-title {
       font-size: 1.25rem;
       margin: 0;
-      color: var(--slate-900);
+      color: var(--pastel-blue-header);
     }
     .step-desc {
       margin: 0;
-      color: var(--slate-600);
+      color: var(--text-main);
       font-size: 1.02rem;
     }
     .tip-box {
-      background: #fefce8;
-      border: 1px solid #fef08a;
+      background: var(--box-light);
+      border: 1px solid var(--pastel-blue-border);
       border-radius: 8px;
-      padding: 18px 22px;
+      padding: 20px 24px;
       margin-top: 30px;
-      font-size: 0.95rem;
-      color: #713f12;
+      font-size: 0.98rem;
+      color: var(--pastel-blue-header);
     }
     .cta-banner {
-      background: var(--slate-900);
+      background: var(--pastel-blue-header);
       color: white;
-      border-radius: 12px;
+      border-radius: 10px;
       padding: 35px 25px;
       text-align: center;
-      margin-top: 40px;
+      margin-top: 45px;
     }
     .cta-banner h2 {
       color: white;
@@ -162,93 +224,110 @@
       font-size: 1.6rem;
     }
     .cta-banner p {
-      color: #94a3b8;
+      color: #93c5fd;
       margin: 0 0 20px 0;
       font-size: 1.05rem;
     }
     .btn {
       display: inline-block;
-      background: var(--primary);
+      background: var(--pastel-blue-accent);
       color: white;
       text-decoration: none;
-      padding: 14px 28px;
+      padding: 14px 30px;
       border-radius: 6px;
       font-weight: 700;
       font-size: 1.05rem;
-      transition: background 0.2s ease;
     }
-    .btn:hover { background: var(--primary-hover); }
     .back-link {
       display: inline-block;
       margin-top: 30px;
-      color: var(--slate-600);
+      color: var(--text-muted);
       text-decoration: none;
       font-weight: 600;
     }
-    .back-link:hover { color: var(--primary); }
+    .back-link:hover { color: var(--pastel-blue-accent); }
   </style>
 </head>
 <body>
-<div class="container">
-  <div class="badge-bar">
-    <span class="badge">Verified Technical Manual</span>
-    <span class="status-badge">✓ Updated 2026</span>
+
+<nav class="navbar">
+  <a href="/" class="navbar-brand">Stack Manuals</a>
+  <a href="https://uptimerobot.com/?red=stackm" class="navbar-btn" target="_blank" rel="noopener">Access UptimeRobot &rarr;</a>
+</nav>
+
+<header class="hero-banner">
+  <div class="hero-banner-inner">
+    <span class="category-badge">Uptime & Server Monitoring</span>
+    <h1>Detect Server Downtime Instantly via SMS, Email, or Slack</h1>
+    <p class="author-line">By Infrastructure Support Group &bull; Updated 2026</p>
   </div>
-  
-  <h1>Detect Server Downtime Instantly via SMS, Email, or Slack</h1>
-  <p class="intro">When your website or API crashes, every offline minute costs money and damages brand trust. Learn how to monitor server availability 24/7 with instant incident notifications.</p>
+</header>
 
-  <div class="meta-card">
-    <div>⏱️ Estimated Setup Time: 5 Mins</div>
-    <div>⚡ Target Platform: UptimeRobot</div>
-  </div>
+<div class="content-wrapper">
+  <div class="main-card">
 
-  <div class="prereq-box">
-    <h3>Prerequisites & System Requirements</h3>
-    <ul>
-      <li>Target website URL or server IP address</li>
-    </ul>
-  </div>
+    <div class="hero-image-placeholder">
+      <h2>Detect Server Downtime Instantly via SMS, Email, or Slack</h2>
+      <p>Official Integration Guide for UptimeRobot</p>
+    </div>
 
-  <h2 class="section-heading">Step-by-Step Implementation Procedure</h2>
+    <p class="summary-text">Unmonitored website crashes lead to lost sales, poor user experience, and dropped search rankings. This guide demonstrates how to configure continuous HTTP/HTTPS monitoring with automated incident alerts.</p>
 
-  
-        <div class="step-card">
+    <div class="toc-box">
+      <h3>Table of Contents</h3>
+      <ul>
+        <li><a href='#section-1'>Understanding Server Monitoring</a></li><li><a href='#section-2'>Step 1: Add HTTP Endpoint Monitor</a></li><li><a href='#section-3'>Step 2: Configure Checking Intervals</a></li><li><a href='#section-4'>Step 3: Connect Notification Channels</a></li><li><a href='#section-5'>Alert Escalation Best Practices</a></li>
+      </ul>
+    </div>
+
+    <div class="prereq-box">
+      <h3>Prerequisites and System Requirements</h3>
+      <ul>
+        <li>Target domain URL or server IP address</li><li>Access to team communication tools (Email, Slack, or Microsoft Teams)</li>
+      </ul>
+    </div>
+
+    <h2 class="section-heading">Step-by-Step Implementation Procedure</h2>
+
+    
+        <div class="step-card" id="section-1">
           <div class="step-header">
             <span class="step-number">1</span>
-            <h2 class="step-title">Create HTTP(s) Monitor</h2>
+            <h2 class="step-title">Add HTTP Endpoint Monitor</h2>
           </div>
-          <p class="step-desc">Sign in to UptimeRobot and click <strong>Add New Monitor</strong>. Select monitor type <strong>HTTP(s)</strong> and enter your target URL (e.g., https://yourwebsite.com).</p>
+          <p class="step-desc">Log into your UptimeRobot dashboard and click <strong>Add New Monitor</strong>. Select <strong>HTTP(s)</strong> as the monitor type. Enter a descriptive name for your monitor (such as <em>Primary Storefront</em>) and paste your complete website address including `https://`.</p>
         </div>
         
-        <div class="step-card">
+        <div class="step-card" id="section-2">
           <div class="step-header">
             <span class="step-number">2</span>
-            <h2 class="step-title">Configure Check Intervals & Timeout Rules</h2>
+            <h2 class="step-title">Configure Checking Intervals</h2>
           </div>
-          <p class="step-desc">Set your monitoring check frequency (e.g., every 60 seconds) and configure HTTP status code expectations (200 OK).</p>
+          <p class="step-desc">Set your monitoring interval (such as every 60 seconds for critical web applications). Optionally enable <strong>Keyword Monitoring</strong> to verify that a specific word renders on page load, ensuring the server is not serving a blank screen.</p>
         </div>
         
-        <div class="step-card">
+        <div class="step-card" id="section-3">
           <div class="step-header">
             <span class="step-number">3</span>
-            <h2 class="step-title">Add Notification Integration Channels</h2>
+            <h2 class="step-title">Connect Notification Channels</h2>
           </div>
-          <p class="step-desc">Choose where alerts send when downtime occurs: Email, SMS, Slack channel, Microsoft Teams webhook, or Push notification.</p>
+          <p class="step-desc">Under the <em>Alert Contacts To Notify</em> section, select your email address, phone number for SMS, or link your team Slack webhook. UptimeRobot monitors your website continuously and sends an instant alert if an HTTP 500 server error or timeout is detected.</p>
         </div>
         
 
-  <div class="tip-box">
-    💡 <strong>Pro-Tip & Best Practice:</strong> Set up a secondary alert contact so key team members get notified if primary engineers don't acknowledge the incident within 5 minutes.
-  </div>
+    <div class="tip-box">
+      <strong>Best Practice:</strong> Set up a secondary alert contact with a 5-minute delay so management is notified if on-call staff miss the initial alert.
+    </div>
 
-  <div class="cta-banner">
-    <h2>Ready to implement UptimeRobot?</h2>
-    <p>Access official portal tools and initialize your workspace in minutes.</p>
-    <a href="https://uptimerobot.com/?red=stackm" class="btn" target="_blank" rel="noopener">Launch UptimeRobot Portal &rarr;</a>
-  </div>
+    <div class="cta-banner">
+      <h2>Ready to implement UptimeRobot?</h2>
+      <p>Access official portal tools and initialize your workspace in minutes.</p>
+      <a href="https://uptimerobot.com/?red=stackm" class="btn" target="_blank" rel="noopener">Launch UptimeRobot Portal &rarr;</a>
+    </div>
 
-  <a href="/" class="back-link">&larr; Back to Stack Manuals Index</a>
+    <a href="/" class="back-link">&larr; Back to Stack Manuals Directory</a>
+  </div>
 </div>
+
 </body>
 </html>
